@@ -1,8 +1,11 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip"
+import { cn } from "@/lib/utils"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'})
 
@@ -18,12 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <TooltipProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
