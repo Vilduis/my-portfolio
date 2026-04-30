@@ -1,8 +1,5 @@
 import type { StaticImageData } from "next/image"
-import RidenOn from "../assets/RidenOn.png"
-import Calculator from "../assets/Calculator.png"
-import UniTrack from "../assets/UniTrack.png"
-import OrganAlzer from "../assets/OrganAlzer.png"
+
 import Portfolio1 from "../assets/Portfolio1.png"
 import ContigoVoy from "../assets/ContigoVoy.png"
 import AsdenPeru from "../assets/AsdenPeru.png"
@@ -11,6 +8,12 @@ import CodeJourney from "../assets/CodeJourney.png"
 import MamaDelia from "../assets/MamaDelia.png"
 import QuizAnime from "../assets/QuizAnime.png"
 import EspecialLicencias from "../assets/EspecialLicencias.png"
+import Simulacredit from "../assets/SimulaCredit.png"
+import CVSanius from "../assets/CVSanius.png"
+import LiriAI from "../assets/LiriAI.png"
+import Workshop from "../assets/Workshop.png"
+import Kairos from "../assets/Kairos.png"
+
 
 interface BaseProject {
   id: number
@@ -32,18 +35,59 @@ export interface Service extends BaseProject {
 export const personalProjects: Project[] = [
   {
     id: 1,
-    name: "Portfolio",
-    technologies: ["Nextjs", "TailwindCSS", "TypeScript"],
+    name: "Vilfit",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Authjs", "PostgreSQL", "Neon", "Shadcnui", "DrizzleORM"],
     image: Portfolio1,
     description:
-      "Mi portafolio personal construido con Next.js, Tailwind CSS, TypeScript y Framer Motion.",
-    github: "https://github.com/Vilduis/Portfolio_v2",
-    demo: "https://vilduis.netlify.app/",
+      "Aplicación full stack de fitness y seguimiento de rutinas de entrenamiento, construida con Next.js. Actualmente en desarrollo.",
+    github: "https://github.com/Vilduis/Vilfit",
+    demo: "https://vilfit.vercel.app/"
   },
   {
     id: 2,
+    name: "CVMatch",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Authjs", "PostgreSQL", "Neon", "Shadcnui", "DrizzleORM"],
+    image: Portfolio1,
+    description:
+      "Plataforma full stack para la búsqueda y match entre candidatos y empleadores en el mercado peruano, construida con Next.js. Actualmente en desarrollo.",
+    github: "https://github.com/Vilduis/CVMatch",
+    demo: "https://cv-match-pe.vercel.app/"
+  },
+
+  {
+    id: 3,
+    name: "Kairos",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "FastAPI", "Shadcnui", "PostgreSQL", "Authjs"],
+    image: Kairos,
+    description:
+      "Aplicación full stack construida con Next.js y FastAPI. Proyecto terminado.",
+    github: "https://github.com/Vilduis/front-kairos",
+    demo: "https://kairos-pe.vercel.app/"
+  },
+  {
+    id: 4,
+    name: "Workshop",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Spring", "Shadcnui", "PostgreSQL", "Vite"],
+    image: Workshop,
+    description:
+      "Aplicación full stack para gestión de talleres, construida con React y Spring Boot. Proyecto terminado.",
+    github: "https://github.com/Vilduis/Workshop",
+    demo: "https://worksho-pe.vercel.app/"
+  },
+  {
+    id: 5,
+    name: "SimulaCredit",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Supabase", "Vite", "Shadcnui"],
+    image: Simulacredit,
+    description:
+      "Aplicación full stack para simulación de créditos financieros, construida con React y Supabase. Proyecto terminado.",
+    github: "https://github.com/Vilduis/SimulaCredit",
+    demo: "https://simulacredit.netlify.app/"
+  },
+  {
+    id: 6,
     name: "CodeJourney",
-    technologies: ["TypeScript", "TailwindCSS", "Nextjs", "Expressjs", "MongoDB"],
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Expressjs", "MongoDB"],
     image: CodeJourney,
     description:
       "CodeJourney es una plataforma social de blogging técnico diseñada para desarrolladores. Permite publicar y compartir conocimientos mediante posts, utilizando una arquitectura moderna y escalable.",
@@ -51,7 +95,39 @@ export const personalProjects: Project[] = [
     demo: "https://code-journey-phi.vercel.app",
   },
   {
-    id: 3,
+    id: 7,
+    name: "Portfolio",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Shadcnui", "Resend"],
+    image: Portfolio1,
+    description:
+      "Mi portafolio personal construido con Next.js, Tailwind CSS, TypeScript y Framer Motion.",
+    github: "https://github.com/Vilduis/my-portfolio",
+    demo: "https://vilduis.vercel.app/",
+  },
+
+  {
+    id: 8,
+    name: "CV Sanius",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
+    image: CVSanius,
+    description:
+      "Aplicación frontend en React que integra la API de Gemini para analizar y mejorar currículums de forma inteligente.",
+    github: "https://github.com/Vilduis/Sanius",
+    demo: "https://cv-sanius.netlify.app/"
+  },
+  {
+    id: 9,
+    name: "Liriai",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
+    image: LiriAI,
+    description:
+      "Aplicación frontend en React con integración de la API de Gemini para generación y análisis de contenido.",
+    github: "https://github.com/Vilduis/LiriAI",
+    demo: "https://liriai.netlify.app/"
+  },
+
+  {
+    id: 10,
     name: "NovaTech",
     technologies: ["React", "TypeScript", "TailwindCSS"],
     image: NovaTech,
@@ -61,9 +137,9 @@ export const personalProjects: Project[] = [
     demo: "https://nova-tech-two.vercel.app/",
   },
   {
-    id: 4,
+    id: 11,
     name: "MamaDelia",
-    technologies: ["JavaScript", "TailwindCSS"],
+    technologies: ["HTML", "CSS", "JavaScript"],
     image: MamaDelia,
     description:
       "Sitio web estático de restaurante Mama Delia. Presenta especialidades, testimonios, reservas y un carrito simple, con soporte de modo claro/oscuro.",
@@ -71,52 +147,16 @@ export const personalProjects: Project[] = [
     demo: "https://rest-delia.vercel.app/",
   },
   {
-    id: 5,
+    id: 12,
     name: "QuizAnime",
-    technologies: ["JavaScript", "TailwindCSS"],
+    technologies: ["HTML", "CSS", "JavaScript"],
     image: QuizAnime,
     description:
-      "QuizAnime una web con 40 preguntas aleatorias, cada una con imagen del anime. Interfaz con Tailwind CSS e iconos de Lucide; lógica en JavaScript.",
+      "QuizAnime es una web con 40 preguntas aleatorias, cada una con imagen del anime. Interfaz con Tailwind CSS e iconos de Lucide; lógica en JavaScript.",
     github: "https://github.com/Vilduis/Quiz-anime",
     demo: "https://quiz-animes.vercel.app/",
   },
-  {
-    id: 6,
-    name: "RidenOn",
-    technologies: ["JavaScript"],
-    image: RidenOn,
-    description:
-      "RideOn es una plataforma de compra de autos en línea con diseño responsivo, construida con HTML5, CSS3 y Bootstrap.",
-    github: "https://github.com/SandovalCoder/RideOn_Landing_Page",
-    demo: "https://rideon-y.vercel.app/",
-  },
-  {
-    id: 7,
-    name: "Calculator",
-    technologies: ["JavaScript"],
-    image: Calculator,
-    description:
-      "Calculadora simple con operaciones básicas y diseño responsivo, construida con HTML, CSS, Bootstrap 5 y JavaScript.",
-    github: "https://github.com/SandovalCoder/Calculator",
-  },
-  {
-    id: 8,
-    name: "UniTrack",
-    technologies: ["JavaScript"],
-    image: UniTrack,
-    description:
-      "UniTrack es una plataforma para gestionar y hacer seguimiento de tu rendimiento académico. Registra tus cursos, calcula tu promedio ponderado y más.",
-    github: "https://github.com/SandovalCoder/PoderadoUniversitario",
-  },
-  {
-    id: 9,
-    name: "OrganAlzer",
-    technologies: ["JavaScript"],
-    image: OrganAlzer,
-    description:
-      "OrganAIzer es un asistente de productividad inteligente que te ayuda a organizar tareas, establecer recordatorios y gestionar tu tiempo de manera eficiente.",
-    github: "https://github.com/SandovalCoder/Coder.github.io",
-  },
+
 ]
 
 export const professionalExperience: Service[] = [

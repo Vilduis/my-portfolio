@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { ExternalLink, Briefcase } from "lucide-react"
+import { ExternalLink, Briefcase, ChevronDown } from "lucide-react"
 import { motion } from "motion/react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -15,19 +15,19 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { GitHub } from "@/components/icons"
+import { GitHub, Icons } from "@/components/icons"
 import { personalProjects, professionalExperience } from "@/data/projects"
 import type { Project, Service } from "@/data/projects"
 
 const ITEMS_PER_PAGE = 4
-
-// ─── ProjectCard ─────────────────────────────────────────────────────────────
 
 type ProjectCardProps =
   | { item: Project; type: "project" }
   | { item: Service; type: "service" }
 
 function ProjectCard({ item, type }: ProjectCardProps) {
+  const [expanded, setExpanded] = useState(false)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -58,19 +58,38 @@ function ProjectCard({ item, type }: ProjectCardProps) {
 
         <CardContent className="space-y-4 p-4">
           <div className="flex flex-wrap gap-1.5">
-            {item.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-border bg-muted/30 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
-              >
-                {tech}
-              </span>
-            ))}
+            {item.technologies.map((tech) => {
+              const Icon = Icons[tech as keyof typeof Icons]
+              if (!Icon) return null
+              return (
+                <span
+                  key={tech}
+                  className="flex items-center gap-1 rounded-full border border-border bg-muted/30 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
+                >
+                  <Icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                  {tech}
+                </span>
+              )
+            })}
           </div>
 
-          <p className="line-clamp-2 text-sm text-muted-foreground">
-            {item.description}
-          </p>
+          <div>
+            <p
+              className={`text-sm text-muted-foreground ${expanded ? "" : "line-clamp-2"}`}
+            >
+              {item.description}
+            </p>
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              className="mt-1 flex items-center gap-1 text-xs text-primary hover:underline"
+            >
+              {expanded ? "Ver menos" : "Ver más"}
+              <ChevronDown
+                size={13}
+                className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+              />
+            </button>
+          </div>
 
           {type === "project" && item.github && (
             <div className="flex items-center gap-2 pt-1">
@@ -104,8 +123,6 @@ function ProjectCard({ item, type }: ProjectCardProps) {
     </motion.div>
   )
 }
-
-// ─── ProjectPagination ────────────────────────────────────────────────────────
 
 type ProjectPaginationProps = {
   currentPage: number
@@ -145,8 +162,6 @@ function ProjectPagination({ currentPage, totalPages, onPageChange }: ProjectPag
     </Pagination>
   )
 }
-
-// ─── ProjectsPage ─────────────────────────────────────────────────────────────
 
 export default function ProjectsPage() {
   const [currentProjectPage, setCurrentProjectPage] = useState(1)

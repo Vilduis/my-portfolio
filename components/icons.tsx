@@ -225,6 +225,661 @@ const LinkedIn = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
+const Authjs = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 210 232">
+    <path
+      fill="url(#authjs__a)"
+      fillRule="evenodd"
+      d="M208.687 31.859 30.095 167.73C8.164 127.966.568 79.998 0 51.228v-17.61c0-2.561 2.779-4.055 4.169-4.482C33.562 20.278 93.247 2.306 96.838 1.28 100.429.256 103.464 0 104.534 0h.097c1.069 0 4.104.256 7.696 1.28 3.591 1.025 63.276 18.998 92.669 27.856 1.034.317 2.836 1.225 3.691 2.723Z"
+      clipRule="evenodd"
+    />
+    <path
+      fill="url(#authjs__b)"
+      fillRule="evenodd"
+      d="m30.094 167.952 178.592-135.87c.295.516.478 1.102.478 1.759V51.45c-.962 48.773-22.126 152.722-99.083 178.336-1.068.427-3.591 1.281-5.13 1.281h-.739c-1.539 0-4.062-.854-5.13-1.281-31.563-10.505-53.74-34.186-68.988-61.834Z"
+      clipRule="evenodd"
+    />
+    <path
+      fill="url(#authjs__c)"
+      fill-opacity=".21"
+      d="M111.74 1.283C108.147.257 105.11 0 104.04 0l-.321 231.305h.642c1.54 0 4.064-.855 5.133-1.283 76.995-25.665 98.169-129.822 99.131-178.692V33.685c0-2.566-2.78-4.063-4.171-4.491-29.407-8.876-89.121-26.884-92.714-27.91Z"
+    />
+    <ellipse cx="104.905" cy="114.209" fill="#E3E2FA" rx="47.801" ry="47.48" />
+    <path
+      fill="url(#authjs__d)"
+      fillRule="evenodd"
+      d="M96.243 124.475c-3.635.321-12.832-1.283-17.323-5.133-4.823-4.134-7.379-9.624-7.379-17.645 0-9.95 8.983-20.532 21.495-20.21 11.883.304 19.898 7.002 21.494 17.644.833 5.553-.016 8.222-.676 10.295-.102.323-.2.631-.286.933-.321 1.07-.77 3.401 0 4.171.769.77 12.511 12.084 18.286 17.644.534.642 1.604 2.246 1.604 3.529v6.096c0 .962-.257 1.283-1.283 1.283h-12.833c-.748-.107-2.246-.834-2.246-2.887 0-2.189-.233-2.511-.7-3.156-.08-.111-.168-.232-.262-.373-.642-.963-1.925-.963-3.208-.963-1.283 0-2.246-.321-2.887-.962-.642-.642-.642-1.604-.321-2.887.321-1.284 0-2.567-.642-2.888a7.71 7.71 0 0 1-.353-.194c-.704-.4-1.827-1.038-3.176-.768-1.604.321-3.85 0-5.133-1.283-1.283-1.284-2.887-2.32-4.17-2.246Zm-8.662-24.381a4.812 4.812 0 1 0 0-9.625 4.812 4.812 0 0 0 0 9.625Z"
+      clipRule="evenodd"
+    />
+    <defs>
+      <linearGradient
+        id="authjs__a"
+        x1="19.57"
+        x2="97.527"
+        y1="96.564"
+        y2="15.078"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#45FFC8" />
+        <stop offset="1" stopColor="#1DBBF1" />
+      </linearGradient>
+      <linearGradient
+        id="authjs__b"
+        x1="73.786"
+        x2="170.671"
+        y1="143.724"
+        y2="190.884"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D14AE8" />
+        <stop offset=".552" stopColor="#B628E3" />
+        <stop offset="1" stopColor="#8315FD" />
+      </linearGradient>
+      <linearGradient
+        id="authjs__c"
+        x1="155.914"
+        x2="155.914"
+        y1="21.815"
+        y2="182.542"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#20ABF5" />
+        <stop offset=".398" stopColor="#2A8CC3" />
+        <stop offset="1" stopColor="#A104DC" />
+      </linearGradient>
+      <linearGradient
+        id="authjs__d"
+        x1="90.148"
+        x2="129.287"
+        y1="99.452"
+        y2="138.912"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FE5B01" />
+        <stop offset="1" stopColor="#FFB200" />
+      </linearGradient>
+    </defs>
+  </svg>
+)
+
+const Neon = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 256" preserveAspectRatio="xMidYMid">
+    <defs>
+      <linearGradient id="neon__a" x1="100%" x2="12.069%" y1="100%" y2="0%">
+        <stop offset="0%" stopColor="#62F755" />
+        <stop offset="100%" stopColor="#8FF986" stopOpacity="0" />
+      </linearGradient>
+      <linearGradient
+        id="neon__b"
+        x1="100%"
+        x2="40.603%"
+        y1="100%"
+        y2="76.897%"
+      >
+        <stop offset="0%" stopOpacity=".9" />
+        <stop offset="100%" stopColor="#1A1A1A" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+    <path
+      fill="#00E0D9"
+      d="M0 44.139C0 19.762 19.762 0 44.139 0H211.86C236.238 0 256 19.762 256 44.139v142.649c0 25.216-31.915 36.16-47.388 16.256l-48.392-62.251v75.484c0 21.939-17.784 39.723-39.722 39.723h-76.36C19.763 256 0 236.238 0 211.861V44.14Zm44.139-8.825c-4.879 0-8.825 3.946-8.825 8.818v167.73c0 4.878 3.946 8.831 8.818 8.831h77.688c2.44 0 3.087-1.977 3.087-4.416v-101.22c0-25.222 31.914-36.166 47.395-16.255l48.391 62.243V44.14c0-4.879.455-8.825-4.416-8.825H44.14Z"
+    />
+    <path
+      fill="url(#neon__a)"
+      d="M0 44.139C0 19.762 19.762 0 44.139 0H211.86C236.238 0 256 19.762 256 44.139v142.649c0 25.216-31.915 36.16-47.388 16.256l-48.392-62.251v75.484c0 21.939-17.784 39.723-39.722 39.723h-76.36C19.763 256 0 236.238 0 211.861V44.14Zm44.139-8.825c-4.879 0-8.825 3.946-8.825 8.818v167.73c0 4.878 3.946 8.831 8.818 8.831h77.688c2.44 0 3.087-1.977 3.087-4.416v-101.22c0-25.222 31.914-36.166 47.395-16.255l48.391 62.243V44.14c0-4.879.455-8.825-4.416-8.825H44.14Z"
+    />
+    <path
+      fill="url(#neon__b)"
+      fill-opacity=".4"
+      d="M0 44.139C0 19.762 19.762 0 44.139 0H211.86C236.238 0 256 19.762 256 44.139v142.649c0 25.216-31.915 36.16-47.388 16.256l-48.392-62.251v75.484c0 21.939-17.784 39.723-39.722 39.723h-76.36C19.763 256 0 236.238 0 211.861V44.14Zm44.139-8.825c-4.879 0-8.825 3.946-8.825 8.818v167.73c0 4.878 3.946 8.831 8.818 8.831h77.688c2.44 0 3.087-1.977 3.087-4.416v-101.22c0-25.222 31.914-36.166 47.395-16.255l48.391 62.243V44.14c0-4.879.455-8.825-4.416-8.825H44.14Z"
+    />
+    <path
+      fill="#63F655"
+      d="M211.861 0C236.238 0 256 19.762 256 44.139v142.649c0 25.216-31.915 36.16-47.388 16.256l-48.392-62.251v75.484c0 21.939-17.784 39.723-39.722 39.723a4.409 4.409 0 0 0 4.409-4.409V115.058c0-25.223 31.914-36.167 47.395-16.256l48.391 62.243V8.825c0-4.871-3.953-8.825-8.832-8.825Z"
+    />
+  </svg>
+)
+
+const Shadcnui = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 256">
+    <path fill="none" d="M0 0h256v256H0z" />
+    <path
+      fill="none"
+      stroke="#fff"
+      strokeWidth="25"
+      strokeLinecap="round"
+      d="M208 128l-80 80M192 40L40 192"
+    />
+  </svg>
+)
+
+const DrizzleORM = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 160 160">
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#C5F74F"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 43.48 67.304)"
+    />
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#C5F74F"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 76.94 46.534)"
+    />
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#C5F74F"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 128.424 46.535)"
+    />
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#C5F74F"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 94.957 67.304)"
+    />
+  </svg>
+)
+
+const FastAPI = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 256 256">
+    <path
+      d="M128 0C57.33 0 0 57.33 0 128s57.33 128 128 128 128-57.33 128-128S198.67 0 128 0Zm-6.67 230.605v-80.288H76.699l64.128-124.922v80.288h42.966L121.33 230.605Z"
+      fill="#009688"
+    />
+  </svg>
+)
+
+const Resend = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 1800 1800" fill="none">
+    <path
+      d="M1000.46 450C1174.77 450 1278.43 553.669 1278.43 691.282C1278.43 828.896 1174.77 932.563 1000.46 932.563H912.382L1350 1350H1040.82L707.794 1033.48C683.944 1011.47 672.936 985.781 672.935 963.765C672.935 932.572 694.959 905.049 737.161 893.122L908.712 847.244C973.85 829.812 1018.81 779.353 1018.81 713.298C1018.8 632.567 952.745 585.78 871.095 585.78H450V450H1000.46Z"
+      fill="#FDFDFD"
+    />
+  </svg>
+)
+
+const Vite = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 48 46">
+    <path
+      fill="#863bff"
+      d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z"
+      style={{ fill: "color(display-p3 .5252 .23 1)", fillOpacity: "1" }}
+    />
+    <mask
+      id="vite__mask0_2002_17158"
+      width="48"
+      height="46"
+      x="0"
+      y="0"
+      maskUnits="userSpaceOnUse"
+      style={{ maskType: "alpha" }}
+    >
+      <path
+        fill="#000"
+        d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z"
+        style={{ fill: "#000", fillOpacity: "1" }}
+      />
+    </mask>
+    <g mask="url(#vite__mask0_2002_17158)">
+      <g filter="url(#vite__filter0_f_2002_17158)">
+        <ellipse
+          cx="5.508"
+          cy="14.704"
+          fill="#ede6ff"
+          rx="5.508"
+          ry="14.704"
+          style={{ fill: "color(display-p3 .9275 .9033 1)", fillOpacity: "1" }}
+          transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"
+        />
+      </g>
+      <g filter="url(#vite__filter1_f_2002_17158)">
+        <ellipse
+          cx="10.399"
+          cy="29.851"
+          fill="#ede6ff"
+          rx="10.399"
+          ry="29.851"
+          style={{ fill: "color(display-p3 .9275 .9033 1)", fillOpacity: "1" }}
+          transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"
+        />
+      </g>
+      <g filter="url(#vite__filter2_f_2002_17158)">
+        <ellipse
+          cx="5.508"
+          cy="30.487"
+          fill="#7e14ff"
+          rx="5.508"
+          ry="30.487"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"
+        />
+      </g>
+      <g filter="url(#vite__filter3_f_2002_17158)">
+        <ellipse
+          cx="5.508"
+          cy="30.599"
+          fill="#7e14ff"
+          rx="5.508"
+          ry="30.599"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"
+        />
+      </g>
+      <g filter="url(#vite__filter4_f_2002_17158)">
+        <ellipse
+          cx="5.508"
+          cy="30.599"
+          fill="#7e14ff"
+          rx="5.508"
+          ry="30.599"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(89.814 -32.454 -1.99)scale(1 -1)"
+        />
+      </g>
+      <g filter="url(#vite__filter5_f_2002_17158)">
+        <ellipse
+          cx="14.072"
+          cy="22.078"
+          fill="#ede6ff"
+          rx="14.072"
+          ry="22.078"
+          style={{ fill: "color(display-p3 .9275 .9033 1)", fillOpacity: "1" }}
+          transform="rotate(93.35 24.506 48.493)scale(-1 1)"
+        />
+      </g>
+      <g filter="url(#vite__filter6_f_2002_17158)">
+        <ellipse
+          cx="3.47"
+          cy="21.501"
+          fill="#7e14ff"
+          rx="3.47"
+          ry="21.501"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(89.009 28.708 47.59)scale(-1 1)"
+        />
+      </g>
+      <g filter="url(#vite__filter7_f_2002_17158)">
+        <ellipse
+          cx="3.47"
+          cy="21.501"
+          fill="#7e14ff"
+          rx="3.47"
+          ry="21.501"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(89.009 28.708 47.59)scale(-1 1)"
+        />
+      </g>
+      <g filter="url(#vite__filter8_f_2002_17158)">
+        <ellipse
+          cx=".387"
+          cy="8.972"
+          fill="#7e14ff"
+          rx="4.407"
+          ry="29.108"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(39.51 .387 8.972)"
+        />
+      </g>
+      <g filter="url(#vite__filter9_f_2002_17158)">
+        <ellipse
+          cx="47.523"
+          cy="-6.092"
+          fill="#7e14ff"
+          rx="4.407"
+          ry="29.108"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(37.892 47.523 -6.092)"
+        />
+      </g>
+      <g filter="url(#vite__filter10_f_2002_17158)">
+        <ellipse
+          cx="41.412"
+          cy="6.333"
+          fill="#47bfff"
+          rx="5.971"
+          ry="9.665"
+          style={{ fill: "color(display-p3 .2799 .748 1)", fillOpacity: "1" }}
+          transform="rotate(37.892 41.412 6.333)"
+        />
+      </g>
+      <g filter="url(#vite__filter11_f_2002_17158)">
+        <ellipse
+          cx="-1.879"
+          cy="38.332"
+          fill="#7e14ff"
+          rx="4.407"
+          ry="29.108"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(37.892 -1.88 38.332)"
+        />
+      </g>
+      <g filter="url(#vite__filter12_f_2002_17158)">
+        <ellipse
+          cx="-1.879"
+          cy="38.332"
+          fill="#7e14ff"
+          rx="4.407"
+          ry="29.108"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(37.892 -1.88 38.332)"
+        />
+      </g>
+      <g filter="url(#vite__filter13_f_2002_17158)">
+        <ellipse
+          cx="35.651"
+          cy="29.907"
+          fill="#7e14ff"
+          rx="4.407"
+          ry="29.108"
+          style={{ fill: "color(display-p3 .4922 .0767 1)", fillOpacity: "1" }}
+          transform="rotate(37.892 35.651 29.907)"
+        />
+      </g>
+      <g filter="url(#vite__filter14_f_2002_17158)">
+        <ellipse
+          cx="38.418"
+          cy="32.4"
+          fill="#47bfff"
+          rx="5.971"
+          ry="15.297"
+          style={{ fill: "color(display-p3 .2799 .748 1)", fillOpacity: "1" }}
+          transform="rotate(37.892 38.418 32.4)"
+        />
+      </g>
+    </g>
+    <defs>
+      <filter
+        id="vite__filter0_f_2002_17158"
+        width="60.045"
+        height="41.654"
+        x="-19.77"
+        y="16.149"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="7.659"
+        />
+      </filter>
+      <filter
+        id="vite__filter1_f_2002_17158"
+        width="90.34"
+        height="51.437"
+        x="-54.613"
+        y="-7.533"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="7.659"
+        />
+      </filter>
+      <filter
+        id="vite__filter2_f_2002_17158"
+        width="79.355"
+        height="29.4"
+        x="-49.64"
+        y="2.03"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter3_f_2002_17158"
+        width="79.579"
+        height="29.4"
+        x="-45.045"
+        y="20.029"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter4_f_2002_17158"
+        width="79.579"
+        height="29.4"
+        x="-43.513"
+        y="21.178"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter5_f_2002_17158"
+        width="74.749"
+        height="58.852"
+        x="15.756"
+        y="-17.901"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="7.659"
+        />
+      </filter>
+      <filter
+        id="vite__filter6_f_2002_17158"
+        width="61.377"
+        height="25.362"
+        x="23.548"
+        y="2.284"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter7_f_2002_17158"
+        width="61.377"
+        height="25.362"
+        x="23.548"
+        y="2.284"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter8_f_2002_17158"
+        width="56.045"
+        height="63.649"
+        x="-27.636"
+        y="-22.853"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter9_f_2002_17158"
+        width="54.814"
+        height="64.646"
+        x="20.116"
+        y="-38.415"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter10_f_2002_17158"
+        width="33.541"
+        height="35.313"
+        x="24.641"
+        y="-11.323"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter11_f_2002_17158"
+        width="54.814"
+        height="64.646"
+        x="-29.286"
+        y="6.009"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter12_f_2002_17158"
+        width="54.814"
+        height="64.646"
+        x="-29.286"
+        y="6.009"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter13_f_2002_17158"
+        width="54.814"
+        height="64.646"
+        x="8.244"
+        y="-2.416"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+      <filter
+        id="vite__filter14_f_2002_17158"
+        width="39.409"
+        height="43.623"
+        x="18.713"
+        y="10.588"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_2002_17158"
+          stdDeviation="4.596"
+        />
+      </filter>
+    </defs>
+  </svg>
+)
+
+const Supabase = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 109 113" fill="none">
+    <path
+      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+      fill="url(#supabase__paint0_linear)"
+    />
+    <path
+      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+      fill="url(#supabase__paint1_linear)"
+      fill-opacity="0.2"
+    />
+    <path
+      d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
+      fill="#3ECF8E"
+    />
+    <defs>
+      <linearGradient
+        id="supabase__paint0_linear"
+        x1="53.9738"
+        y1="54.974"
+        x2="94.1635"
+        y2="71.8295"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#249361" />
+        <stop offset="1" stopColor="#3ECF8E" />
+      </linearGradient>
+      <linearGradient
+        id="supabase__paint1_linear"
+        x1="36.1558"
+        y1="30.578"
+        x2="54.4844"
+        y2="65.0806"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop />
+        <stop offset="1" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+)
+
 export {
   GitHub,
   ReactIcon,
@@ -237,6 +892,14 @@ export {
   PostgreSQL,
   Spring,
   LinkedIn,
+  Authjs,
+  Neon,
+  Shadcnui,
+  DrizzleORM,
+  FastAPI,
+  Resend,
+  Vite,
+  Supabase,
 }
 
 export const Icons = {
@@ -251,4 +914,12 @@ export const Icons = {
   Spring,
   GitHub,
   LinkedIn,
+  Authjs,
+  Neon,
+  Shadcnui,
+  DrizzleORM,
+  FastAPI,
+  Resend,
+  Vite,
+  Supabase,
 } as const
