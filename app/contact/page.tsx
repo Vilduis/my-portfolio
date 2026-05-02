@@ -115,6 +115,16 @@ export default function ContactPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-6"
           >
+            <div className="inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+              </span>
+              <span className="text-xs font-medium text-green-500">
+                Disponible para nuevos proyectos
+              </span>
+            </div>
+
             <div>
               <h3 className="text-xl font-semibold text-foreground">
                 Estoy disponible para trabajar
@@ -126,40 +136,31 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="space-y-3">
-              {contactItems.map((item) => (
-                <Card
-                  key={item.label}
-                  className="border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10"
-                >
-                  <CardContent className="flex items-center gap-4 py-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <div className="flex flex-wrap gap-3">
+              {contactItems.map((item) =>
+                item.href ? (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className="group flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2.5 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:bg-primary/5 hover:text-primary"
+                  >
+                    <span className="flex shrink-0 items-center text-muted-foreground transition-colors group-hover:text-primary">
                       <item.Icon {...item.iconProps} />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-xs text-muted-foreground">
-                        {item.label}
-                      </p>
-                      {item.href ? (
-                        <Link
-                          href={item.href}
-                          target={item.external ? "_blank" : undefined}
-                          rel={
-                            item.external ? "noopener noreferrer" : undefined
-                          }
-                          className="truncate text-sm font-medium text-foreground transition-colors hover:text-primary"
-                        >
-                          {item.value}
-                        </Link>
-                      ) : (
-                        <p className="text-sm font-medium text-foreground">
-                          {item.value}
-                        </p>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </span>
+                    {item.value}
+                  </Link>
+                ) : (
+                  <span
+                    key={item.label}
+                    className="flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2.5 text-sm font-medium text-muted-foreground"
+                  >
+                    <item.Icon {...item.iconProps} />
+                    {item.value}
+                  </span>
+                )
+              )}
             </div>
           </motion.div>
 

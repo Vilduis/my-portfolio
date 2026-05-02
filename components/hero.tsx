@@ -100,7 +100,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col justify-center py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="absolute top-1/4 left-15 hidden lg:block">
+        <div className="absolute top-1/4 left-15 hidden min-[1440px]:block">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -123,7 +123,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="absolute top-1/3 right-15 hidden lg:block">
+        <div className="absolute top-1/3 right-15 hidden min-[1440px]:block">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
