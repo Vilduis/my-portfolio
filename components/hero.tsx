@@ -163,13 +163,14 @@ export default function Hero() {
               </h1>
 
               <h2 className="text-3xl font-medium text-muted-foreground md:text-4xl">
-                Desarrollador <span className="text-primary">Full Stack</span>
+                <span className="text-primary">Frontend</span> Developer
               </h2>
 
               <p className="max-w-xl text-lg text-muted-foreground">
-                Estudiante de Ingeniería de Sistemas de Información con
-                experiencia en React, Spring Boot, Next.js y Express. Apasionado
-                por crear soluciones tecnológicas innovadoras.
+                Estudiante de último ciclo de Ingeniería de Sistemas de
+                Información en la UPC, con experiencia real en React, Next.js y
+                TypeScript. Con capacidad full stack usando Express, FastAPI y
+                Spring Boot.
               </p>
 
               <div className="flex flex-wrap gap-4">

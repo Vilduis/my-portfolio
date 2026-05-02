@@ -57,7 +57,6 @@ const contactItems: ContactItem[] = [
   },
 ]
 
-
 type Status = "idle" | "loading" | "success" | "error"
 
 export default function ContactPage() {
@@ -95,14 +94,15 @@ export default function ContactPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
           <h2 className="mb-2 text-4xl font-bold text-primary">Contacto</h2>
           <p className="text-muted-foreground">
-            ¿Tienes un proyecto en mente? Hablemos.
+            ¿Hablamos? Estoy disponible para nuevas oportunidades.
           </p>
         </motion.div>
 
@@ -110,7 +110,8 @@ export default function ContactPage() {
           {/* Left — info */}
           <motion.div
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-6"
@@ -121,18 +122,18 @@ export default function ContactPage() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
               </span>
               <span className="text-xs font-medium text-green-500">
-                Disponible para nuevos proyectos
+                Disponible para trabajar
               </span>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold text-foreground">
-                Estoy disponible para trabajar
+                Estoy buscando nuevas oportunidades
               </h3>
               <p className="mt-2 text-muted-foreground">
-                Actualmente busco oportunidades como desarrollador web. Si
-                tienes una propuesta, idea o simplemente quieres conectar, no
-                dudes en escribirme.
+                Actualmente busco mi próxima oportunidad como Frontend
+                Developer. Si tienes una posición o propuesta, me encantaría
+                conversar.
               </p>
             </div>
 
@@ -167,7 +168,8 @@ export default function ContactPage() {
           {/* Right — form */}
           <motion.div
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.2 }}
           >

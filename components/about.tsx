@@ -52,15 +52,21 @@ export default function About() {
               className="space-y-6"
             >
               <h3 className="text-2xl font-bold text-foreground">
-                Desarrollador Web con enfoque en{" "}
-                <span className="text-primary">experiencias digitales</span>
+                Frontend Developer con{" "}
+                <span className="text-primary">visión Full Stack</span>
               </h3>
 
               <p className="text-muted-foreground">
-                Soy Vilder, estudiante de Ingeniería de Sistemas de Información
-                apasionado por construir aplicaciones web modernas. Me
-                especializo en React, Next.js y Spring Boot, y disfruto resolver
-                problemas complejos con soluciones simples y bien diseñadas.
+                Soy Vilder, estudiante de último ciclo de Ingeniería de Sistemas
+                de Información en la UPC. Me especializo en construir interfaces
+                modernas con React, Next.js y TypeScript, cuidando siempre la
+                calidad visual y la experiencia del usuario.
+              </p>
+
+              <p className="text-muted-foreground">
+                También tengo experiencia construyendo APIs con Express, FastAPI
+                y Spring Boot, lo que me permite colaborar en proyectos
+                completos de principio a fin.
               </p>
 
               <div className="flex gap-8">
