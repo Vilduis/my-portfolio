@@ -16,7 +16,6 @@ const ReactIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     viewBox="0 0 569 512"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
   >
     <g fill="none" fillRule="evenodd">
       <g transform="translate(-227, -256)" fill="#58C4DC" fillRule="nonzero">
@@ -241,7 +240,7 @@ const Authjs = (props: SVGProps<SVGSVGElement>) => (
     />
     <path
       fill="url(#authjs__c)"
-      fill-opacity=".21"
+      fillOpacity=".21"
       d="M111.74 1.283C108.147.257 105.11 0 104.04 0l-.321 231.305h.642c1.54 0 4.064-.855 5.133-1.283 76.995-25.665 98.169-129.822 99.131-178.692V33.685c0-2.566-2.78-4.063-4.171-4.491-29.407-8.876-89.121-26.884-92.714-27.91Z"
     />
     <ellipse cx="104.905" cy="114.209" fill="#E3E2FA" rx="47.801" ry="47.48" />
@@ -330,7 +329,7 @@ const Neon = (props: SVGProps<SVGSVGElement>) => (
     />
     <path
       fill="url(#neon__b)"
-      fill-opacity=".4"
+      fillOpacity=".4"
       d="M0 44.139C0 19.762 19.762 0 44.139 0H211.86C236.238 0 256 19.762 256 44.139v142.649c0 25.216-31.915 36.16-47.388 16.256l-48.392-62.251v75.484c0 21.939-17.784 39.723-39.722 39.723h-76.36C19.763 256 0 236.238 0 211.861V44.14Zm44.139-8.825c-4.879 0-8.825 3.946-8.825 8.818v167.73c0 4.878 3.946 8.831 8.818 8.831h77.688c2.44 0 3.087-1.977 3.087-4.416v-101.22c0-25.222 31.914-36.166 47.395-16.255l48.391 62.243V44.14c0-4.879.455-8.825-4.416-8.825H44.14Z"
     />
     <path
@@ -847,7 +846,7 @@ const Supabase = (props: SVGProps<SVGSVGElement>) => (
     <path
       d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
       fill="url(#supabase__paint1_linear)"
-      fill-opacity="0.2"
+      fillOpacity="0.2"
     />
     <path
       d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
@@ -880,6 +879,270 @@ const Supabase = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
+const Nodejs = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    viewBox="0 0 256 292"
+  >
+    <defs>
+      <linearGradient
+        id="nodejs__a"
+        x1="68.188%"
+        x2="27.823%"
+        y1="17.487%"
+        y2="89.755%"
+      >
+        <stop offset="0%" stopColor="#41873F" />
+        <stop offset="32.88%" stopColor="#418B3D" />
+        <stop offset="63.52%" stopColor="#419637" />
+        <stop offset="93.19%" stopColor="#3FA92D" />
+        <stop offset="100%" stopColor="#3FAE2A" />
+      </linearGradient>
+      <linearGradient
+        id="nodejs__c"
+        x1="43.277%"
+        x2="159.245%"
+        y1="55.169%"
+        y2="-18.306%"
+      >
+        <stop offset="13.76%" stopColor="#41873F" />
+        <stop offset="40.32%" stopColor="#54A044" />
+        <stop offset="71.36%" stopColor="#66B848" />
+        <stop offset="90.81%" stopColor="#6CC04A" />
+      </linearGradient>
+      <linearGradient
+        id="nodejs__f"
+        x1="-4.389%"
+        x2="101.499%"
+        y1="49.997%"
+        y2="49.997%"
+      >
+        <stop offset="9.192%" stopColor="#6CC04A" />
+        <stop offset="28.64%" stopColor="#66B848" />
+        <stop offset="59.68%" stopColor="#54A044" />
+        <stop offset="86.24%" stopColor="#41873F" />
+      </linearGradient>
+      <path
+        id="nodejs__b"
+        d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"
+      />
+      <path
+        id="nodejs__e"
+        d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"
+      />
+    </defs>
+    <path
+      fill="url(#nodejs__a)"
+      d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"
+    />
+    <mask id="nodejs__d" fill="#fff">
+      <use href="#nodejs__b" />
+    </mask>
+    <path
+      fill="url(#nodejs__c)"
+      d="M249.485 67.8 134.65 1.833c-1.086-.542-2.443-1.085-3.529-1.357L2.443 220.912c1.086 1.357 2.444 2.443 3.8 3.258l114.834 65.968c3.258 1.9 7.059 2.443 10.588 1.357L252.47 70.515c-.815-1.086-1.9-1.9-2.986-2.714Z"
+      mask="url(#nodejs__d)"
+    />
+    <mask id="nodejs__g" fill="#fff">
+      <use href="#nodejs__e" />
+    </mask>
+    <path
+      fill="url(#nodejs__f)"
+      d="M249.756 223.898c3.258-1.9 5.701-5.158 6.787-8.687L130.579.204c-3.258-.543-6.787-.272-9.773 1.628L6.786 67.53l122.979 224.238c1.628-.272 3.529-.815 5.158-1.63l114.833-66.239Z"
+      mask="url(#nodejs__g)"
+    />
+  </svg>
+)
+
+const JWT = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 257" preserveAspectRatio="xMidYMid">
+    <path
+      fill="#FFF"
+      d="M147.386 69.071 147.129 0h-38.515l.257 69.071 19.257 26.448zM108.871 187.442v69.328h38.515v-69.328l-19.258-26.447z"
+    />
+    <path
+      fill="#00F2E6"
+      d="m147.386 187.442 40.57 55.976 31.069-22.596-40.57-55.975-31.069-10.015zM108.871 69.071 68.044 13.095 36.975 35.691l40.57 55.976 31.326 10.014z"
+    />
+    <path
+      fill="#00B9F1"
+      d="M77.545 91.667 11.811 70.355 0 106.816l65.733 21.569 31.069-10.271zM159.198 138.399l19.257 26.448 65.734 21.311L256 149.697l-65.733-21.312z"
+    />
+    <path
+      fill="#D63AFF"
+      d="M190.267 128.385 256 106.816l-11.811-36.461-65.734 21.312-19.257 26.447zM65.733 128.385 0 149.697l11.811 36.461 65.734-21.311 19.257-26.448z"
+    />
+    <path
+      fill="#FB015B"
+      d="m77.545 164.847-40.57 55.975 31.069 22.596 40.827-55.976v-32.61zM178.455 91.667l40.57-55.976-31.069-22.596-40.57 55.976v32.61z"
+    />
+  </svg>
+)
+
+const HTML5 = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 452 520">
+    <path fill="#e34f26" d="M41 460L0 0h451l-41 460-185 52" />
+    <path fill="#ef652a" d="M226 472l149-41 35-394H226" />
+    <path
+      fill="#ecedee"
+      d="M226 208h-75l-5-58h80V94H84l15 171h127zm0 147l-64-17-4-45h-56l7 89 117 32z"
+    />
+    <path
+      fill="#fff"
+      d="M226 265h69l-7 73-62 17v59l115-32 16-174H226zm0-171v56h136l5-56z"
+    />
+  </svg>
+)
+
+const CSS = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 512 512">
+    <path
+      fill="#264de4"
+      d="M71.357 460.819 30.272 0h451.456l-41.129 460.746L255.724 512z"
+    />
+    <path fill="#2965f1" d="m405.388 431.408 35.148-393.73H256v435.146z" />
+    <path
+      fill="#ebebeb"
+      d="m124.46 208.59 5.065 56.517H256V208.59zm-5.041-57.875H256V94.197H114.281zM256 355.372l-.248.066-62.944-16.996-4.023-45.076h-56.736l7.919 88.741 115.772 32.14.26-.073z"
+    />
+    <path
+      fill="#fff"
+      d="M255.805 208.59v56.517H325.4l-6.56 73.299-63.035 17.013v58.8l115.864-32.112.85-9.549 13.28-148.792 1.38-15.176 10.203-114.393H255.805v56.518h79.639L330.3 208.59z"
+    />
+  </svg>
+)
+
+const Angular = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 242 256">
+    <g clipPath="url(#angular__a)">
+      <mask
+        id="angular__b"
+        width="242"
+        height="256"
+        x="0"
+        y="0"
+        maskUnits="userSpaceOnUse"
+        style={{ maskType: "luminance" }}
+      >
+        <path fill="#fff" d="M0 0h242v256H0V0Z" />
+      </mask>
+      <g mask="url(#angular__b)">
+        <path
+          fill="url(#angular__c)"
+          d="m241 43-9 136L149 0l92 43Zm-58 176-62 36-63-36 12-31h101l12 31ZM121 68l32 80H88l33-80ZM9 179 0 43 92 0 9 179Z"
+        />
+        <path
+          fill="url(#angular__d)"
+          d="m241 43-9 136L149 0l92 43Zm-58 176-62 36-63-36 12-31h101l12 31ZM121 68l32 80H88l33-80ZM9 179 0 43 92 0 9 179Z"
+        />
+      </g>
+    </g>
+    <defs>
+      <linearGradient
+        id="angular__c"
+        x1="53.2"
+        x2="245"
+        y1="231.9"
+        y2="140.7"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#E40035" />
+        <stop offset=".2" stopColor="#F60A48" />
+        <stop offset=".4" stopColor="#F20755" />
+        <stop offset=".5" stopColor="#DC087D" />
+        <stop offset=".7" stopColor="#9717E7" />
+        <stop offset="1" stopColor="#6C00F5" />
+      </linearGradient>
+      <linearGradient
+        id="angular__d"
+        x1="44.5"
+        x2="170"
+        y1="30.7"
+        y2="174"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FF31D9" />
+        <stop offset="1" stopColor="#FF5BE1" stopOpacity="0" />
+      </linearGradient>
+      <clipPath id="angular__a">
+        <path fill="#fff" d="M0 0h242v256H0z" />
+      </clipPath>
+    </defs>
+  </svg>
+)
+
+const Java = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 256 346">
+    <path
+      d="M83 267s-14 8 9 11c27 3 41 2 71-3 0 0 8 5 19 9-67 29-153-2-99-17M74 230s-15 11 8 13c29 3 52 3 92-4 0 0 6 5 15 8-82 24-173 2-115-17"
+      fill="#5382A1"
+    />
+    <path
+      d="M144 166c17 19-4 36-4 36s42-22 22-49c-18-26-32-38 44-82 0 0-119 29-62 95"
+      fill="#E76F00"
+    />
+    <path
+      d="M233 295s10 8-10 15c-39 12-163 15-197 0-12-5 11-13 18-14l12-2c-14-9-89 19-38 28 138 22 251-10 215-27M89 190s-63 15-22 21c17 2 51 2 83-1 26-2 52-7 52-7l-16 9c-64 16-187 8-151-9 30-14 54-13 54-13M202 253c64-33 34-66 13-61l-7 2s2-3 6-5c41-14 73 43-14 66l2-2"
+      fill="#5382A1"
+    />
+    <path
+      d="M162 0s36 36-34 91c-56 45-12 70 0 99-32-30-56-56-40-80 23-35 89-53 74-110"
+      fill="#E76F00"
+    />
+    <path
+      d="M95 345c62 4 158-3 160-32 0 0-4 11-51 20-53 10-119 9-158 2 0 0 8 7 49 10"
+      fill="#5382A1"
+    />
+  </svg>
+)
+
+const Python = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="16 16 32 32">
+    <path
+      fill="url(#python__a)"
+      d="M31.885 16c-8.124 0-7.617 3.523-7.617 3.523l.01 3.65h7.752v1.095H21.197S16 23.678 16 31.876c0 8.196 4.537 7.906 4.537 7.906h2.708v-3.804s-.146-4.537 4.465-4.537h7.688s4.32.07 4.32-4.175v-7.019S40.374 16 31.885 16zm-4.275 2.454a1.394 1.394 0 1 1 0 2.79 1.393 1.393 0 0 1-1.395-1.395c0-.771.624-1.395 1.395-1.395z"
+    />
+    <path
+      fill="url(#python__b)"
+      d="M32.115 47.833c8.124 0 7.617-3.523 7.617-3.523l-.01-3.65H31.97v-1.095h10.832S48 40.155 48 31.958c0-8.197-4.537-7.906-4.537-7.906h-2.708v3.803s.146 4.537-4.465 4.537h-7.688s-4.32-.07-4.32 4.175v7.019s-.656 4.247 7.833 4.247zm4.275-2.454a1.393 1.393 0 0 1-1.395-1.395 1.394 1.394 0 1 1 1.395 1.395z"
+    />
+    <defs>
+      <linearGradient
+        id="python__a"
+        x1="19.075"
+        x2="34.898"
+        y1="18.782"
+        y2="34.658"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#387EB8" />
+        <stop offset="1" stopColor="#366994" />
+      </linearGradient>
+      <linearGradient
+        id="python__b"
+        x1="28.809"
+        x2="45.803"
+        y1="28.882"
+        y2="45.163"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FFE052" />
+        <stop offset="1" stopColor="#FFC331" />
+      </linearGradient>
+    </defs>
+  </svg>
+)
+
+const MySQL = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 256 252">
+    <path
+      fill="#FFF"
+      d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z"
+    />
+    <path fill="#FFF" d="m58 43-7 1 6 7 4 9v-1c3-1 4-4 4-8l-2-4-5-4Z" />
+  </svg>
+)
+
 export {
   GitHub,
   ReactIcon,
@@ -900,6 +1163,14 @@ export {
   Resend,
   Vite,
   Supabase,
+  Nodejs,
+  JWT,
+  HTML5,
+  CSS,
+  Angular,
+  Java,
+  Python,
+  MySQL,
 }
 
 export const Icons = {
@@ -922,4 +1193,12 @@ export const Icons = {
   Resend,
   Vite,
   Supabase,
+  Nodejs,
+  JWT,
+  HTML5,
+  CSS,
+  Angular,
+  Java,
+  Python,
+  MySQL,
 } as const

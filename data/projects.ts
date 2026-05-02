@@ -3,17 +3,19 @@ import type { StaticImageData } from "next/image"
 import Portfolio1 from "../assets/Portfolio1.png"
 import ContigoVoy from "../assets/ContigoVoy.png"
 import AsdenPeru from "../assets/AsdenPeru.png"
-import NovaTech from "../assets/NovaTech.png"
 import CodeJourney from "../assets/CodeJourney.png"
-import MamaDelia from "../assets/MamaDelia.png"
-import QuizAnime from "../assets/QuizAnime.png"
+import BackWorkshop from "../assets/BackWorkshop.png"
+import BackKairos from "../assets/BackKairos.png"
 import EspecialLicencias from "../assets/EspecialLicencias.png"
 import Simulacredit from "../assets/SimulaCredit.png"
 import CVSanius from "../assets/CVSanius.png"
 import LiriAI from "../assets/LiriAI.png"
 import Workshop from "../assets/Workshop.png"
 import Kairos from "../assets/Kairos.png"
+import BackCodeJourney from "../assets/BackCodeJourney.png"
 
+
+export type ProjectCategory = "fullstack" | "frontend" | "backend"
 
 interface BaseProject {
   id: number
@@ -26,6 +28,7 @@ interface BaseProject {
 export interface Project extends BaseProject {
   github: string
   demo?: string
+  category: ProjectCategory
 }
 
 export interface Service extends BaseProject {
@@ -39,9 +42,10 @@ export const personalProjects: Project[] = [
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Authjs", "PostgreSQL", "Neon", "Shadcnui", "DrizzleORM"],
     image: Portfolio1,
     description:
-      "Aplicación full stack de fitness y seguimiento de rutinas de entrenamiento, construida con Next.js. Actualmente en desarrollo.",
+      "Marketplace de empleo para Latinoamérica que usa IA para eliminar el filtrado manual de CVs. Los reclutadores reciben un ranking automático de candidatos con score de compatibilidad, mientras los candidatos se postulan subiendo su CV.",
     github: "https://github.com/Vilduis/Vilfit",
-    demo: "https://vilfit.vercel.app/"
+    demo: "https://vilfit.vercel.app/",
+    category: "fullstack",
   },
   {
     id: 2,
@@ -49,20 +53,21 @@ export const personalProjects: Project[] = [
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Authjs", "PostgreSQL", "Neon", "Shadcnui", "DrizzleORM"],
     image: Portfolio1,
     description:
-      "Plataforma full stack para la búsqueda y match entre candidatos y empleadores en el mercado peruano, construida con Next.js. Actualmente en desarrollo.",
+      "Plataforma que analiza la compatibilidad entre un CV y una oferta laboral usando IA. Genera en segundos un puntaje de match, fortalezas, brechas y sugerencias de mejora, con preguntas probables de entrevista si el match supera el 70%.",
     github: "https://github.com/Vilduis/CVMatch",
-    demo: "https://cv-match-pe.vercel.app/"
+    demo: "https://cv-match-pe.vercel.app/",
+    category: "fullstack",
   },
-
   {
     id: 3,
     name: "Kairos",
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "FastAPI", "Shadcnui", "PostgreSQL", "Authjs"],
     image: Kairos,
     description:
-      "Aplicación full stack construida con Next.js y FastAPI. Proyecto terminado.",
+      "Plataforma de orientación vocacional que guía a estudiantes en la elección de carrera mediante un chatbot con test RIASEC. Incluye paneles diferenciados para estudiantes, evaluadores y administradores, con rutas protegidas por rol.",
     github: "https://github.com/Vilduis/front-kairos",
-    demo: "https://kairos-pe.vercel.app/"
+    demo: "https://kairos-pe.vercel.app/",
+    category: "fullstack",
   },
   {
     id: 4,
@@ -70,9 +75,10 @@ export const personalProjects: Project[] = [
     technologies: ["React", "TypeScript", "TailwindCSS", "Spring", "Shadcnui", "PostgreSQL", "Vite"],
     image: Workshop,
     description:
-      "Aplicación full stack para gestión de talleres, construida con React y Spring Boot. Proyecto terminado.",
+      "Sistema web para la administración integral de talleres mecánicos. Gestiona órdenes de servicio, técnicos, clientes y vehículos con control de acceso por roles (Admin / Técnico) y dashboard de métricas en tiempo real.",
     github: "https://github.com/Vilduis/Workshop",
-    demo: "https://worksho-pe.vercel.app/"
+    demo: "https://worksho-pe.vercel.app/",
+    category: "fullstack",
   },
   {
     id: 5,
@@ -80,9 +86,10 @@ export const personalProjects: Project[] = [
     technologies: ["React", "TypeScript", "TailwindCSS", "Supabase", "Vite", "Shadcnui"],
     image: Simulacredit,
     description:
-      "Aplicación full stack para simulación de créditos financieros, construida con React y Supabase. Proyecto terminado.",
+      "Aplicación web full stack para simular créditos hipotecarios. Calcula cuotas mensuales, cronogramas de amortización e indicadores financieros clave (TCEA, VAN, TIR). Incluye gestión de clientes y propiedades, generación de reportes y exportación a PDF y Excel.",
     github: "https://github.com/Vilduis/SimulaCredit",
-    demo: "https://simulacredit.netlify.app/"
+    demo: "https://simulacredit.netlify.app/",
+    category: "fullstack",
   },
   {
     id: 6,
@@ -90,9 +97,10 @@ export const personalProjects: Project[] = [
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Expressjs", "MongoDB"],
     image: CodeJourney,
     description:
-      "CodeJourney es una plataforma social de blogging técnico diseñada para desarrolladores. Permite publicar y compartir conocimientos mediante posts, utilizando una arquitectura moderna y escalable.",
+      "Plataforma social de blogging técnico para desarrolladores. Permite publicar artículos con imágenes, comentar posts de la comunidad y gestionar el perfil personal y rutas protegidas por autenticación.",
     github: "https://github.com/SandovalCoder/front-CodeJourney",
     demo: "https://code-journey-phi.vercel.app",
+    category: "fullstack",
   },
   {
     id: 7,
@@ -103,17 +111,18 @@ export const personalProjects: Project[] = [
       "Mi portafolio personal construido con Next.js, Tailwind CSS, TypeScript y Framer Motion.",
     github: "https://github.com/Vilduis/my-portfolio",
     demo: "https://vilduis.vercel.app/",
+    category: "frontend",
   },
-
   {
     id: 8,
     name: "CV Sanius",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     image: CVSanius,
     description:
-      "Aplicación frontend en React que integra la API de Gemini para analizar y mejorar currículums de forma inteligente.",
+      "Editor de currículums con asistencia de IA. Genera resúmenes profesionales y optimiza descripciones de experiencia laboral con Google Gemini, con vista previa en tiempo real y exportación a PDF.",
     github: "https://github.com/Vilduis/Sanius",
-    demo: "https://cv-sanius.netlify.app/"
+    demo: "https://cv-sanius.netlify.app/",
+    category: "frontend",
   },
   {
     id: 9,
@@ -121,40 +130,43 @@ export const personalProjects: Project[] = [
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     image: LiriAI,
     description:
-      "Aplicación frontend en React con integración de la API de Gemini para generación y análisis de contenido.",
+      "Aplicación web que usa Google Gemini para crear poemas y frases a partir de una idea o sentimiento, y redactar respuestas a mensajes con distintos tonos y formatos.",
     github: "https://github.com/Vilduis/LiriAI",
-    demo: "https://liriai.netlify.app/"
+    demo: "https://liriai.netlify.app/",
+    category: "frontend",
   },
-
   {
     id: 10,
-    name: "NovaTech",
-    technologies: ["React", "TypeScript", "TailwindCSS"],
-    image: NovaTech,
+    name: "Kairos API",
+    technologies: ["FastAPI", "PostgreSQL", "JWT"],
+    image: BackKairos,
     description:
-      "NovaTech es una aplicación de comercio electrónico moderna dedicada a la venta de tecnologías de punta: smartphones, laptops, televisores y más.",
-    github: "https://github.com/SandovalCoder/NovaTech",
-    demo: "https://nova-tech-two.vercel.app/",
+      "API REST del backend de Kairos. Procesa respuestas vocacionales con un modelo RIASEC (TF-IDF + similitud de coseno) e integra Google Gemini para conversaciones guiadas con IA, recomendando las tres carreras más afines al perfil del estudiante.",
+    github: "https://github.com/Vilduis/back-kairos",
+    demo: "https://back-kairos.onrender.com/docs",
+    category: "backend",
   },
   {
     id: 11,
-    name: "MamaDelia",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    image: MamaDelia,
+    name: "Workshop API",
+    technologies: ["Spring", "JWT", "PostgreSQL", "Neon"],
+    image: BackWorkshop,
     description:
-      "Sitio web estático de restaurante Mama Delia. Presenta especialidades, testimonios, reservas y un carrito simple, con soporte de modo claro/oscuro.",
-    github: "https://github.com/Vilduis/RestDelia",
-    demo: "https://rest-delia.vercel.app/",
+      "API REST del backend de Workshop. Centraliza la gestión de clientes, vehículos, técnicos y órdenes de servicio de un taller mecánico, con autenticación JWT, control de acceso por roles (Admin / Técnico) y documentación interactiva con Swagger UI.",
+    github: "https://github.com/Vilduis/Back-workshop",
+    demo: "https://back-workshop.onrender.com/api/docs",
+    category: "backend",
   },
   {
     id: 12,
-    name: "QuizAnime",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    image: QuizAnime,
+    name: "CodeJourney API",
+    technologies: ["Nodejs", "Expressjs", "JavaScript", "MongoDB", "JWT"],
+    image: BackCodeJourney,
     description:
-      "QuizAnime es una web con 40 preguntas aleatorias, cada una con imagen del anime. Interfaz con Tailwind CSS e iconos de Lucide; lógica en JavaScript.",
-    github: "https://github.com/Vilduis/Quiz-anime",
-    demo: "https://quiz-animes.vercel.app/",
+      "API REST del backend de CodeJourney. Gestiona usuarios, posts con imágenes y comentarios, con autenticación JWT, almacenamiento en Cloudinary y base de datos MongoDB Atlas.",
+    github: "https://github.com/Vilduis/back-CodeJourney-",
+    demo: "https://back-code-journey.vercel.app/api/docs/",
+    category: "backend",
   },
 
 ]

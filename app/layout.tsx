@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
@@ -6,6 +7,11 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+
+export const metadata: Metadata = {
+  title: "Vilder Sandoval — Portfolio",
+  description: "Desarrollador web fullstack | React, Next.js, TypeScript",
+}
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'})
 

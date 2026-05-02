@@ -17,9 +17,18 @@ import {
 } from "@/components/ui/pagination"
 import { GitHub, Icons } from "@/components/icons"
 import { personalProjects, professionalExperience } from "@/data/projects"
-import type { Project, Service } from "@/data/projects"
+import type { Project, Service, ProjectCategory } from "@/data/projects"
 
-const ITEMS_PER_PAGE = 4
+const ITEMS_PER_PAGE = 6
+
+type FilterOption = { label: string; value: "all" | ProjectCategory }
+
+const FILTERS: FilterOption[] = [
+  { label: "Todos", value: "all" },
+  { label: "Full Stack", value: "fullstack" },
+  { label: "Frontend", value: "frontend" },
+  { label: "Backend", value: "backend" },
+]
 
 type ProjectCardProps =
   | { item: Project; type: "project" }
@@ -48,7 +57,7 @@ function ProjectCard({ item, type }: ProjectCardProps) {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/80 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-4">
             {type === "service" && (
-              <p className="mb-0.5 text-xs font-medium uppercase tracking-wider text-primary">
+              <p className="mb-0.5 text-xs font-medium tracking-wider text-primary uppercase">
                 {item.company}
               </p>
             )}
@@ -130,7 +139,11 @@ type ProjectPaginationProps = {
   onPageChange: (page: number) => void
 }
 
-function ProjectPagination({ currentPage, totalPages, onPageChange }: ProjectPaginationProps) {
+function ProjectPagination({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: ProjectPaginationProps) {
   return (
     <Pagination>
       <PaginationContent>
@@ -154,7 +167,9 @@ function ProjectPagination({ currentPage, totalPages, onPageChange }: ProjectPag
         <PaginationItem>
           <PaginationNext
             onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
-            className={currentPage === totalPages ? "cursor-not-allowed opacity-50" : ""}
+            className={
+              currentPage === totalPages ? "cursor-not-allowed opacity-50" : ""
+            }
             aria-disabled={currentPage === totalPages}
           />
         </PaginationItem>
@@ -166,11 +181,16 @@ function ProjectPagination({ currentPage, totalPages, onPageChange }: ProjectPag
 export default function ProjectsPage() {
   const [currentProjectPage, setCurrentProjectPage] = useState(1)
   const [currentServicePage, setCurrentServicePage] = useState(1)
+  const [activeFilter, setActiveFilter] = useState<"all" | ProjectCategory>("all")
 
-  const totalProjectPages = Math.ceil(personalProjects.length / ITEMS_PER_PAGE)
+  const filteredProjects = activeFilter === "all"
+    ? personalProjects
+    : personalProjects.filter((p) => p.category === activeFilter)
+
+  const totalProjectPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE)
   const totalServicePages = Math.ceil(professionalExperience.length / ITEMS_PER_PAGE)
 
-  const currentProjects = personalProjects.slice(
+  const currentProjects = filteredProjects.slice(
     (currentProjectPage - 1) * ITEMS_PER_PAGE,
     currentProjectPage * ITEMS_PER_PAGE
   )
@@ -178,6 +198,11 @@ export default function ProjectsPage() {
     (currentServicePage - 1) * ITEMS_PER_PAGE,
     currentServicePage * ITEMS_PER_PAGE
   )
+
+  function handleFilterChange(value: "all" | ProjectCategory) {
+    setActiveFilter(value)
+    setCurrentProjectPage(1)
+  }
 
   return (
     <section className="w-full py-28" id="projects">
@@ -200,7 +225,10 @@ export default function ProjectsPage() {
               <GitHub width={16} height={16} />
               <span className="hidden sm:inline">Proyectos</span>
             </TabsTrigger>
-            <TabsTrigger value="professional" className="flex items-center gap-2">
+            <TabsTrigger
+              value="professional"
+              className="flex items-center gap-2"
+            >
               <Briefcase size={16} />
               <span className="hidden sm:inline">Experiencia Profesional</span>
             </TabsTrigger>
@@ -212,6 +240,22 @@ export default function ProjectsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
+              <div className="mb-6 flex flex-wrap justify-center gap-2 sm:justify-start">
+                {FILTERS.map((f) => (
+                  <button
+                    key={f.value}
+                    onClick={() => handleFilterChange(f.value)}
+                    className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                      activeFilter === f.value
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-muted/10 text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                    }`}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+
               <div className="grid gap-8 md:grid-cols-2">
                 {currentProjects.map((project) => (
                   <ProjectCard key={project.id} item={project} type="project" />

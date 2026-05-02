@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "motion/react"
-import { useState } from "react"
-import { Mail, MapPin, Send, type LucideIcon } from "lucide-react"
-import type { SVGProps } from "react"
+import { useState, useTransition } from "react"
+import { Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { sendContactEmail } from "@/app/actions/contact"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -14,7 +14,7 @@ import { GitHub, LinkedIn } from "@/components/icons"
 import { fadeInUp } from "@/lib/animations"
 
 type ContactItem = {
-  Icon: LucideIcon | React.ComponentType<SVGProps<SVGSVGElement>>
+  Icon: React.ComponentType<Record<string, number>>
   iconProps: Record<string, number>
   label: string
   value: string
@@ -58,6 +58,8 @@ const contactItems: ContactItem[] = [
 ]
 
 
+type Status = "idle" | "loading" | "success" | "error"
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -65,6 +67,8 @@ export default function ContactPage() {
     subject: "",
     message: "",
   })
+  const [status, setStatus] = useState<Status>("idle")
+  const [isPending, startTransition] = useTransition()
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -72,15 +76,18 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const subject = encodeURIComponent(
-      formData.subject || `Contacto desde portfolio - ${formData.name}`
-    )
-    const body = encodeURIComponent(
-      `Nombre: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )
-    window.open(`mailto:luisvilders@gmail.com?subject=${subject}&body=${body}`)
+    setStatus("loading")
+    startTransition(async () => {
+      const result = await sendContactEmail(formData)
+      if (result.success) {
+        setStatus("success")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        setStatus("error")
+      }
+    })
   }
 
   return (
@@ -220,12 +227,26 @@ export default function ContactPage() {
                     </Field>
                   </FieldGroup>
 
+                  {status === "success" && (
+                    <div className="flex items-center gap-2 rounded-lg bg-green-500/10 px-4 py-3 text-sm text-green-500">
+                      <CheckCircle size={16} />
+                      Mensaje enviado correctamente.
+                    </div>
+                  )}
+                  {status === "error" && (
+                    <div className="flex items-center gap-2 rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                      <AlertCircle size={16} />
+                      Error al enviar. Inténtalo de nuevo.
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                    disabled={isPending}
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-60"
                   >
                     <Send size={16} className="mr-2" />
-                    Enviar mensaje
+                    {isPending ? "Enviando..." : "Enviar mensaje"}
                   </Button>
                 </form>
               </CardContent>

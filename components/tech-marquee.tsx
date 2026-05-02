@@ -5,16 +5,28 @@ type TechItem = {
   icon: (typeof Icons)[keyof typeof Icons]
 }
 
-const techStack: TechItem[] = [
-  { name: "React",       icon: Icons.React },
-  { name: "Next.js",     icon: Icons.Nextjs },
-  { name: "TypeScript",  icon: Icons.TypeScript },
-  { name: "JavaScript",  icon: Icons.JavaScript },
-  { name: "Tailwind CSS",icon: Icons.TailwindCSS },
-  { name: "Express.js",  icon: Icons.Expressjs },
-  { name: "MongoDB",     icon: Icons.MongoDB },
-  { name: "PostgreSQL",  icon: Icons.PostgreSQL },
-  { name: "Spring",      icon: Icons.Spring },
+const frontendStack: TechItem[] = [
+  { name: "React",        icon: Icons.React },
+  { name: "Next.js",      icon: Icons.Nextjs },
+  { name: "TypeScript",   icon: Icons.TypeScript },
+  { name: "JavaScript",   icon: Icons.JavaScript },
+  { name: "Tailwind CSS", icon: Icons.TailwindCSS },
+  { name: "Shadcn/UI",    icon: Icons.Shadcnui },
+  { name: "Angular",      icon: Icons.Angular },
+  { name: "Vite",         icon: Icons.Vite },
+]
+
+const backendStack: TechItem[] = [
+  { name: "Node.js",      icon: Icons.Nodejs },
+  { name: "Express.js",   icon: Icons.Expressjs },
+  { name: "Spring Boot",  icon: Icons.Spring },
+  { name: "FastAPI",      icon: Icons.FastAPI },
+  { name: "PostgreSQL",   icon: Icons.PostgreSQL },
+  { name: "MongoDB",      icon: Icons.MongoDB },
+  { name: "Supabase",     icon: Icons.Supabase },
+  { name: "Auth.js",      icon: Icons.Authjs },
+  { name: "Java",         icon: Icons.Java },
+  { name: "Python",       icon: Icons.Python },
 ]
 
 function MarqueeRow({
@@ -66,8 +78,8 @@ export function TechMarquee() {
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
         }}
       >
-        <MarqueeRow items={techStack} />
-        <MarqueeRow items={[...techStack].reverse()} reverse />
+        <MarqueeRow items={frontendStack} />
+        <MarqueeRow items={backendStack} reverse />
       </div>
     </section>
   )

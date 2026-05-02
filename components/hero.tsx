@@ -88,7 +88,13 @@ const leftTechStack = [
   "JavaScript",
   "TailwindCSS",
 ] as const
-const rightTechStack = ["Expressjs", "MongoDB", "PostgreSQL", "Spring"] as const
+const rightTechStack = [
+  "Nodejs",
+  "Expressjs",
+  "MongoDB",
+  "PostgreSQL",
+  "Spring",
+] as const
 
 export default function Hero() {
   return (

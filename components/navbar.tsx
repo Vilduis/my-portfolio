@@ -6,13 +6,7 @@ import { Menu, X, Terminal } from "lucide-react"
 import Link from "next/link"
 import { ModeToggle } from "./mode-toggle"
 import { GitHub } from "@/components/icons"
-
-const menuItems = [
-  { name: "Inicio", href: "/" },
-  { name: "Sobre Mí", href: "/about" },
-  { name: "Proyectos", href: "/project" },
-  { name: "Contacto", href: "/contact" },
-]
+import { navLinks } from "@/lib/navigation"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -56,7 +50,7 @@ const Navbar = () => {
           </Link>
 
           <ul className="hidden items-center gap-8 md:flex">
-            {menuItems.map((item, i) => (
+            {navLinks.map((item, i) => (
               <motion.li
                 key={item.href}
                 initial={{ opacity: 0, y: -10 }}
@@ -122,7 +116,7 @@ const Navbar = () => {
               className="overflow-hidden border-t border-border bg-background md:hidden"
             >
               <div className="flex flex-col gap-1 px-6 py-4">
-                {menuItems.map((item, i) => (
+                {navLinks.map((item, i) => (
                   <motion.div
                     key={item.href}
                     initial={{ opacity: 0, x: -10 }}

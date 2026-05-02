@@ -11,7 +11,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20">
+    <section className="relative py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -31,8 +31,8 @@ export default function About() {
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-110" />
-                <div className="relative rounded-full p-[3px] bg-linear-to-br from-primary via-primary/60 to-primary/20 shadow-xl shadow-primary/20">
+                <div className="absolute inset-0 scale-110 rounded-full bg-primary/20 blur-2xl" />
+                <div className="relative rounded-full bg-linear-to-br from-primary via-primary/60 to-primary/20 p-[3px] shadow-xl shadow-primary/20">
                   <div className="h-64 w-64 overflow-hidden rounded-full md:h-72 md:w-72">
                     <Image
                       src="/Luis.jpg"
@@ -58,16 +58,20 @@ export default function About() {
 
               <p className="text-muted-foreground">
                 Soy Vilder, estudiante de Ingeniería de Sistemas de Información
-                apasionado por construir aplicaciones web modernas. Me especializo
-                en React, Next.js y Spring Boot, y disfruto resolver problemas
-                complejos con soluciones simples y bien diseñadas.
+                apasionado por construir aplicaciones web modernas. Me
+                especializo en React, Next.js y Spring Boot, y disfruto resolver
+                problemas complejos con soluciones simples y bien diseñadas.
               </p>
 
               <div className="flex gap-8">
                 {stats.map((stat) => (
                   <div key={stat.label}>
-                    <p className="text-3xl font-bold text-primary">{stat.value}</p>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
+                    <p className="text-3xl font-bold text-primary">
+                      {stat.value}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {stat.label}
+                    </p>
                   </div>
                 ))}
               </div>

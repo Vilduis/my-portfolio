@@ -1,13 +1,7 @@
 import Link from "next/link"
 import { Mail, Terminal } from "lucide-react"
 import { GitHub, LinkedIn } from "@/components/icons"
-
-const navLinks = [
-  { name: "Inicio", href: "/" },
-  { name: "Sobre Mí", href: "/about" },
-  { name: "Proyectos", href: "/project" },
-  { name: "Contacto", href: "/contact" },
-]
+import { navLinks } from "@/lib/navigation"
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com/in/vilder-sandoval", icon: <LinkedIn width={18} height={18} /> },
