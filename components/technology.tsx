@@ -90,7 +90,7 @@ export default function Technology() {
           </h2>
 
           <Tabs defaultValue="frontend" className="w-full">
-            <TabsList className="mb-8 grid w-full grid-cols-3 border border-border bg-muted/10">
+            <TabsList className="mb-8 grid w-full grid-cols-3 border border-border bg-muted/40">
               {categories.map((cat) => (
                 <TabsTrigger
                   key={cat.value}

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Desarrollador web fullstack | React, Next.js, TypeScript",
 }
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -29,7 +29,12 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        "antialiased",
+        fontMono.variable,
+        "font-sans",
+        inter.variable
+      )}
     >
       <body>
         <ThemeProvider>

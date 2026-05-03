@@ -73,7 +73,7 @@ function ProjectCard({ item, type }: ProjectCardProps) {
               return (
                 <span
                   key={tech}
-                  className="flex items-center gap-1 rounded-full border border-border bg-muted/30 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
+                  className="flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-0.5 text-xs font-medium text-muted-foreground dark:bg-muted/30"
                 >
                   <Icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                   {tech}
@@ -220,7 +220,7 @@ export default function ProjectsPage() {
         </motion.div>
 
         <Tabs defaultValue="projects" className="w-full">
-          <TabsList className="mb-10 grid w-full grid-cols-2 border border-border bg-muted/10">
+          <TabsList className="mb-10 grid w-full grid-cols-2 border border-border bg-muted/40">
             <TabsTrigger value="projects" className="flex items-center gap-2">
               <GitHub width={16} height={16} />
               <span className="hidden sm:inline">Proyectos</span>

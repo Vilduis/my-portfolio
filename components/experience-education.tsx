@@ -23,7 +23,7 @@ export default function ExperienceEducation() {
           </h2>
 
           <Tabs defaultValue="experience" className="w-full">
-            <TabsList className="mb-8 grid w-full grid-cols-2 border border-border bg-muted/10">
+            <TabsList className="mb-8 grid w-full grid-cols-2 border border-border bg-muted/40">
               <TabsTrigger value="experience" className="flex items-center gap-2">
                 <Briefcase size={16} />
                 Experiencia

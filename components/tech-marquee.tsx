@@ -49,7 +49,7 @@ function MarqueeRow({
           return (
             <div
               key={`${tech.name}-${i}`}
-              className="flex items-center gap-2 rounded-full border border-border bg-muted/30 px-4 py-2 backdrop-blur-sm"
+              className="flex items-center gap-2 rounded-full border border-border bg-card shadow-sm px-4 py-2 backdrop-blur-sm dark:bg-muted/30 dark:shadow-none"
             >
               <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
               <span className="whitespace-nowrap text-sm text-muted-foreground">

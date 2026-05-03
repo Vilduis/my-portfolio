@@ -112,7 +112,7 @@ export default function Hero() {
               return (
                 <motion.div
                   key={tech}
-                  className="flex h-12 w-12 animate-pulse items-center justify-center rounded-full border border-border bg-muted/20 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-muted/30"
+                  className="flex h-12 w-12 animate-pulse items-center justify-center rounded-full border border-border bg-card/90 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-muted/40 dark:bg-muted/20 dark:hover:bg-muted/30"
                   style={{ animationDelay: `${index * 0.2}s` }}
                   whileHover={{ scale: 1.2, rotate: 10 }}
                 >
@@ -135,7 +135,7 @@ export default function Hero() {
               return (
                 <motion.div
                   key={tech}
-                  className="flex h-12 w-12 animate-pulse items-center justify-center rounded-full border border-border bg-muted/20 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-muted/30"
+                  className="flex h-12 w-12 animate-pulse items-center justify-center rounded-full border border-border bg-card/90 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-muted/40 dark:bg-muted/20 dark:hover:bg-muted/30"
                   style={{ animationDelay: `${index * 0.2 + 0.1}s` }}
                   whileHover={{ scale: 1.2, rotate: -10 }}
                 >
