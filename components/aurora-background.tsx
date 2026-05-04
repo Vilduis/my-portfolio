@@ -53,6 +53,9 @@ const HERO_BLOBS: Blob[] = [
 
 export function AuroraBackground() {
   const { resolvedTheme } = useTheme()
+
+  if (!resolvedTheme) return null
+
   const isDark = resolvedTheme === "dark"
 
   return (
