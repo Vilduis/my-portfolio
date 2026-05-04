@@ -1,8 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { motion } from "motion/react"
+import { motion, useMotionValue, useSpring } from "motion/react"
 import { ArrowDown, Mail, Download, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import {
@@ -39,7 +39,7 @@ function Terminal() {
   }, [revealed])
 
   return (
-    <div className="w-full max-w-lg overflow-hidden rounded-xl border border-border bg-card shadow-xl">
+    <div className="mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-border bg-card shadow-xl">
       <div className="flex items-center gap-2 border-b border-border px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red-500" />
         <span className="h-3 w-3 rounded-full bg-yellow-500" />
@@ -78,6 +78,40 @@ function Terminal() {
         </p>
       </div>
     </div>
+  )
+}
+
+function TiltTerminal() {
+  const ref = useRef<HTMLDivElement>(null)
+  const rotateX = useMotionValue(0)
+  const rotateY = useMotionValue(0)
+  const springX = useSpring(rotateX, { stiffness: 180, damping: 18 })
+  const springY = useSpring(rotateY, { stiffness: 180, damping: 18 })
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    if (!ref.current) return
+    const rect = ref.current.getBoundingClientRect()
+    const dx = e.clientX - (rect.left + rect.width / 2)
+    const dy = e.clientY - (rect.top + rect.height / 2)
+    rotateY.set((dx / (rect.width / 2)) * 12)
+    rotateX.set(-(dy / (rect.height / 2)) * 8)
+  }
+
+  function handleMouseLeave() {
+    rotateX.set(0)
+    rotateY.set(0)
+  }
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX: springX, rotateY: springY, transformPerspective: 1000 }}
+      className="w-full cursor-default"
+    >
+      <Terminal />
+    </motion.div>
   )
 }
 
@@ -250,7 +284,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex justify-center"
           >
-            <Terminal />
+            <TiltTerminal />
           </motion.div>
         </div>
 

@@ -30,7 +30,7 @@ const Navbar = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className={`bg-background/80 backdrop-blur-md transition-all duration-500 ${
+        className={`bg-background/40 backdrop-blur-xl transition-all duration-500 ${
           scrolled
             ? "rounded-full border border-border shadow-lg shadow-black/5"
             : "border-b border-border"

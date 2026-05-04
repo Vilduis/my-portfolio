@@ -7,6 +7,9 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { AnimatedBackground } from "@/components/animated-background"
+import { ParticlesBackground } from "@/components/particles-background"
+import { AuroraBackground } from "@/components/aurora-background"
 
 export const metadata: Metadata = {
   title: "Vilder Sandoval — Portfolio",
@@ -39,6 +42,9 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <TooltipProvider>
+            <AuroraBackground />
+            <ParticlesBackground />
+            <AnimatedBackground />
             <Navbar />
             <main>{children}</main>
             <Footer />
