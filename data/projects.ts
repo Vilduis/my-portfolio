@@ -13,6 +13,8 @@ import LiriAI from "../assets/LiriAI.png"
 import Workshop from "../assets/Workshop.png"
 import Kairos from "../assets/Kairos.png"
 import BackCodeJourney from "../assets/BackCodeJourney.png"
+import CVMatch from "../assets/Cvmatch.png"
+import Vilfit from "../assets/Vilfit.png"
 
 
 export type ProjectCategory = "fullstack" | "frontend" | "backend"
@@ -40,7 +42,7 @@ export const personalProjects: Project[] = [
     id: 1,
     name: "Vilfit",
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Authjs", "PostgreSQL", "Neon", "Shadcnui", "DrizzleORM"],
-    image: Portfolio1,
+    image: Vilfit,
     description:
       "Marketplace de empleo para Latinoamérica que usa IA para eliminar el filtrado manual de CVs. Los reclutadores reciben un ranking automático de candidatos con score de compatibilidad, mientras los candidatos se postulan subiendo su CV.",
     github: "https://github.com/Vilduis/Vilfit",
@@ -51,7 +53,7 @@ export const personalProjects: Project[] = [
     id: 2,
     name: "CVMatch",
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Authjs", "PostgreSQL", "Neon", "Shadcnui", "DrizzleORM"],
-    image: Portfolio1,
+    image: CVMatch,
     description:
       "Plataforma que analiza la compatibilidad entre un CV y una oferta laboral usando IA. Genera en segundos un puntaje de match, fortalezas, brechas y sugerencias de mejora, con preguntas probables de entrevista si el match supera el 70%.",
     github: "https://github.com/Vilduis/CVMatch",
