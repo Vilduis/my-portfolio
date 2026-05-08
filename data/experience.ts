@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
   {
     title: "Desarrollador Frontend",
     company: "El Comercio",
-    period: "Sep 2025 - Actualidad",
+    period: "Sep 2025 - Ene 2026",
     location: "Lima, Perú",
     projects: [
       {

@@ -213,13 +213,10 @@ export default function Hero() {
                   className="border-border bg-muted/10 text-foreground backdrop-blur-md hover:bg-muted"
                   asChild
                 >
-                  <Link
-                    href="/Cv_stack_sandoval.pdf"
-                    download="CV_Sandoval_Stack"
-                  >
+                  <a href="/CV-Sandoval.pdf" download="CV_Sandoval.pdf">
                     <Download size={18} />
                     Descargar CV
-                  </Link>
+                  </a>
                 </Button>
                 <Button
                   className="bg-primary text-primary-foreground hover:bg-primary/90"
