@@ -2,11 +2,10 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { ExternalLink, Briefcase, ChevronDown } from "lucide-react"
+import { ExternalLink, ChevronDown } from "lucide-react"
 import { motion } from "motion/react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   Pagination,
   PaginationContent,
@@ -15,9 +14,9 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { GitHub, Icons } from "@/components/icons"
-import { personalProjects, professionalExperience } from "@/data/projects"
-import type { Project, Service, ProjectCategory } from "@/data/projects"
+import { GitHub, Icons } from "@/components/shared/icons"
+import { personalProjects } from "@/data/projects"
+import type { Project, ProjectCategory } from "@/types"
 
 const ITEMS_PER_PAGE = 6
 
@@ -30,11 +29,7 @@ const FILTERS: FilterOption[] = [
   { label: "Backend", value: "backend" },
 ]
 
-type ProjectCardProps =
-  | { item: Project; type: "project" }
-  | { item: Service; type: "service" }
-
-function ProjectCard({ item, type }: ProjectCardProps) {
+function ProjectCard({ item }: { item: Project }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -56,11 +51,6 @@ function ProjectCard({ item, type }: ProjectCardProps) {
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/80 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-4">
-            {type === "service" && (
-              <p className="mb-0.5 text-xs font-medium tracking-wider text-primary uppercase">
-                {item.company}
-              </p>
-            )}
             <h3 className="text-xl font-bold text-white">{item.name}</h3>
           </div>
         </div>
@@ -100,7 +90,7 @@ function ProjectCard({ item, type }: ProjectCardProps) {
             </button>
           </div>
 
-          {type === "project" && item.github && (
+          {item.github && (
             <div className="flex items-center gap-2 pt-1">
               <Button
                 variant="outline"
@@ -133,17 +123,15 @@ function ProjectCard({ item, type }: ProjectCardProps) {
   )
 }
 
-type ProjectPaginationProps = {
-  currentPage: number
-  totalPages: number
-  onPageChange: (page: number) => void
-}
-
 function ProjectPagination({
   currentPage,
   totalPages,
   onPageChange,
-}: ProjectPaginationProps) {
+}: {
+  currentPage: number
+  totalPages: number
+  onPageChange: (page: number) => void
+}) {
   return (
     <Pagination>
       <PaginationContent>
@@ -179,123 +167,77 @@ function ProjectPagination({
 }
 
 export default function ProjectsPage() {
-  const [currentProjectPage, setCurrentProjectPage] = useState(1)
-  const [currentServicePage, setCurrentServicePage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1)
   const [activeFilter, setActiveFilter] = useState<"all" | ProjectCategory>("all")
 
-  const filteredProjects = activeFilter === "all"
-    ? personalProjects
-    : personalProjects.filter((p) => p.category === activeFilter)
+  const filteredProjects =
+    activeFilter === "all"
+      ? personalProjects
+      : personalProjects.filter((p) => p.category === activeFilter)
 
-  const totalProjectPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE)
-  const totalServicePages = Math.ceil(professionalExperience.length / ITEMS_PER_PAGE)
+  const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE)
 
   const currentProjects = filteredProjects.slice(
-    (currentProjectPage - 1) * ITEMS_PER_PAGE,
-    currentProjectPage * ITEMS_PER_PAGE
-  )
-  const currentServices = professionalExperience.slice(
-    (currentServicePage - 1) * ITEMS_PER_PAGE,
-    currentServicePage * ITEMS_PER_PAGE
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
   )
 
   function handleFilterChange(value: "all" | ProjectCategory) {
     setActiveFilter(value)
-    setCurrentProjectPage(1)
+    setCurrentPage(1)
   }
 
   return (
     <section className="w-full py-28" id="projects">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-2 text-4xl font-bold text-primary">Proyectos</h2>
-          <p className="text-muted-foreground">
-            Proyectos personales y experiencia profesional.
+          <h2 className="mb-3 text-4xl font-bold text-primary">Proyectos</h2>
+          <p className="mx-auto max-w-xl text-muted-foreground">
+            Cosas que construí por curiosidad o para resolver problemas reales.
           </p>
         </motion.div>
 
-        <Tabs defaultValue="projects" className="w-full">
-          <TabsList className="mb-10 grid w-full grid-cols-2 border border-border bg-muted/40">
-            <TabsTrigger value="projects" className="flex items-center gap-2">
-              <GitHub width={16} height={16} />
-              <span className="hidden sm:inline">Proyectos</span>
-            </TabsTrigger>
-            <TabsTrigger
-              value="professional"
-              className="flex items-center gap-2"
+        <div className="mb-6 flex flex-wrap justify-center gap-2 sm:justify-start">
+          {FILTERS.map((f) => (
+            <button
+              key={f.value}
+              onClick={() => handleFilterChange(f.value)}
+              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                activeFilter === f.value
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-muted/10 text-muted-foreground hover:border-primary/50 hover:text-foreground"
+              }`}
             >
-              <Briefcase size={16} />
-              <span className="hidden sm:inline">Experiencia Profesional</span>
-            </TabsTrigger>
-          </TabsList>
+              {f.label}
+            </button>
+          ))}
+        </div>
 
-          <TabsContent value="projects">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="mb-6 flex flex-wrap justify-center gap-2 sm:justify-start">
-                {FILTERS.map((f) => (
-                  <button
-                    key={f.value}
-                    onClick={() => handleFilterChange(f.value)}
-                    className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
-                      activeFilter === f.value
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border bg-muted/10 text-muted-foreground hover:border-primary/50 hover:text-foreground"
-                    }`}
-                  >
-                    {f.label}
-                  </button>
-                ))}
-              </div>
-
-              <div className="grid gap-8 md:grid-cols-2">
-                {currentProjects.map((project) => (
-                  <ProjectCard key={project.id} item={project} type="project" />
-                ))}
-              </div>
-              {totalProjectPages > 1 && (
-                <div className="mt-8">
-                  <ProjectPagination
-                    currentPage={currentProjectPage}
-                    totalPages={totalProjectPages}
-                    onPageChange={setCurrentProjectPage}
-                  />
-                </div>
-              )}
-            </motion.div>
-          </TabsContent>
-
-          <TabsContent value="professional">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="grid gap-8 md:grid-cols-2">
-                {currentServices.map((service) => (
-                  <ProjectCard key={service.id} item={service} type="service" />
-                ))}
-              </div>
-              {totalServicePages > 1 && (
-                <div className="mt-8">
-                  <ProjectPagination
-                    currentPage={currentServicePage}
-                    totalPages={totalServicePages}
-                    onPageChange={setCurrentServicePage}
-                  />
-                </div>
-              )}
-            </motion.div>
-          </TabsContent>
-        </Tabs>
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="grid gap-8 md:grid-cols-2">
+            {currentProjects.map((project) => (
+              <ProjectCard key={project.id} item={project} />
+            ))}
+          </div>
+          {totalPages > 1 && (
+            <div className="mt-8">
+              <ProjectPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={setCurrentPage}
+              />
+            </div>
+          )}
+        </motion.div>
       </div>
     </section>
   )

@@ -1,12 +1,9 @@
-import type { StaticImageData } from "next/image"
+import type { Project, ProjectCategory } from "@/types/project"
 
 import Portfolio1 from "../assets/Portfolio1.png"
-import ContigoVoy from "../assets/ContigoVoy.png"
-import AsdenPeru from "../assets/AsdenPeru.png"
 import CodeJourney from "../assets/CodeJourney.png"
 import BackWorkshop from "../assets/BackWorkshop.png"
 import BackKairos from "../assets/BackKairos.png"
-import EspecialLicencias from "../assets/EspecialLicencias.png"
 import Simulacredit from "../assets/SimulaCredit.png"
 import CVSanius from "../assets/CVSanius.png"
 import LiriAI from "../assets/LiriAI.png"
@@ -17,25 +14,7 @@ import CVMatch from "../assets/Cvmatch.png"
 import Vilfit from "../assets/Vilfit.png"
 
 
-export type ProjectCategory = "fullstack" | "frontend" | "backend"
-
-interface BaseProject {
-  id: number
-  name: string
-  technologies: string[]
-  image: StaticImageData
-  description: string
-}
-
-export interface Project extends BaseProject {
-  github: string
-  demo?: string
-  category: ProjectCategory
-}
-
-export interface Service extends BaseProject {
-  company: string
-}
+export type { Project, ProjectCategory }
 
 export const personalProjects: Project[] = [
   {
@@ -171,34 +150,4 @@ export const personalProjects: Project[] = [
     category: "backend",
   },
 
-]
-
-export const professionalExperience: Service[] = [
-  {
-    id: 1,
-    name: "Especial Licencia",
-    technologies: ["React", "TailwindCSS", "TypeScript"],
-    image: EspecialLicencias,
-    description:
-      "Especial interactivo de periodismo de datos con estética Pixel Art. Combina visualización de estadísticas complejas (mapas y gráficos) con una experiencia gamificada (trivia) para exponer la problemática de seguridad vial en Perú.",
-    company: "El Comercio",
-  },
-  {
-    id: 2,
-    name: "ContigoVoy",
-    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "PostgreSQL"],
-    image: ContigoVoy,
-    description:
-      "Plataforma integral de atención psicológica que ofrece terapias virtuales, reserva de citas y acompañamiento personalizado para usuarios en su proceso de bienestar emocional.",
-    company: "Neon House Led",
-  },
-  {
-    id: 3,
-    name: "AsdenPerú",
-    technologies: ["Nextjs", "TypeScript", "MongoDB", "Expressjs", "TailwindCSS"],
-    image: AsdenPeru,
-    description:
-      "Plataforma digital que centraliza la gestión y difusión de iniciativas de desarrollo sostenible. Impulsa la innovación, transparencia y compromiso social para un Perú más justo.",
-    company: "Neon House Led",
-  },
 ]

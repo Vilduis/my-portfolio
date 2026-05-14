@@ -10,52 +10,85 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Icons, GitHub, LinkedIn } from "@/components/icons"
+import { GitHub, LinkedIn } from "@/components/shared/icons"
 
 const terminalLines = [
-  { prompt: "whoami", output: ["Vilder  Sandoval · Perú 🇵🇪"] },
-  {
-    prompt: "cat passion.txt",
-    output: ["Transformar ideas en productos reales"],
-  },
+  { prompt: "whoami", output: ["Vilder Sandoval · Perú 🇵🇪"] },
+  { prompt: "cat passion.txt", output: ["Construyendo cosas para la web"] },
   { prompt: "cat hobbies.txt", output: ["Música · Café · Open Source"] },
   {
     prompt: "git log --oneline",
     output: [
-      "a1b2c3 Aprendiendo todos los días",
-      "d4e5f6 Nunca para de construir",
-      "g7h8i9 Apasionado por el detalle",
+      "a1b2c3 Aprendiendo cada día",
+      "d4e5f6 Construyendo interfaces modernas",
+      "g7h8i9 Disfrutando el proceso",
     ],
   },
 ]
 
 function Terminal() {
-  const [revealed, setRevealed] = useState(0)
+  const [currentLine, setCurrentLine] = useState(0)
+  const [typedChars, setTypedChars] = useState(0)
+  const [outputVisible, setOutputVisible] = useState(false)
 
   useEffect(() => {
-    if (revealed >= terminalLines.length) return
-    const timer = setTimeout(() => setRevealed((r) => r + 1), 900)
-    return () => clearTimeout(timer)
-  }, [revealed])
+    if (currentLine >= terminalLines.length) return
+
+    const line = terminalLines[currentLine]
+
+    if (!outputVisible) {
+      if (typedChars < line.prompt.length) {
+        const t = setTimeout(() => setTypedChars((c) => c + 1), 55)
+        return () => clearTimeout(t)
+      }
+      const t = setTimeout(() => setOutputVisible(true), 200)
+      return () => clearTimeout(t)
+    }
+
+    const t = setTimeout(() => {
+      setCurrentLine((l) => l + 1)
+      setTypedChars(0)
+      setOutputVisible(false)
+    }, 700)
+    return () => clearTimeout(t)
+  }, [currentLine, typedChars, outputVisible])
+
+  const isDone = currentLine >= terminalLines.length
 
   return (
-    <div className="mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-border bg-card shadow-xl">
-      <div className="flex items-center gap-2 border-b border-border px-4 py-3">
-        <span className="h-3 w-3 rounded-full bg-red-500" />
-        <span className="h-3 w-3 rounded-full bg-yellow-500" />
-        <span className="h-3 w-3 rounded-full bg-green-500" />
-        <span className="ml-2 font-mono text-xs text-muted-foreground">
-          ~/portfolio
+    <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-primary/30 bg-card shadow-2xl shadow-primary/10">
+      {/* Scanlines overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 rounded-xl"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 3px, color-mix(in oklch, var(--foreground) 3%, transparent) 3px, color-mix(in oklch, var(--foreground) 3%, transparent) 4px)",
+        }}
+      />
+
+      {/* Header */}
+      <div className="flex items-center justify-between border-b border-border/60 bg-muted/30 px-4 py-2.5">
+        <div className="flex items-center gap-1.5">
+          <span className="h-3 w-3 rounded-full bg-red-400/90" />
+          <span className="h-3 w-3 rounded-full bg-yellow-400/90" />
+          <span className="h-3 w-3 rounded-full bg-green-400/90" />
+        </div>
+        <span className="font-mono text-xs text-muted-foreground">
+          vilder@dev — zsh
         </span>
+        <div className="w-14" />
       </div>
 
-      <div className="space-y-4 p-5 font-mono text-sm">
-        {terminalLines.slice(0, revealed).map((line) => (
+      {/* Body */}
+      <div className="min-h-[220px] space-y-3 p-5 font-mono text-sm">
+        {/* Completed lines */}
+        {terminalLines.slice(0, currentLine).map((line) => (
           <motion.div
             key={line.prompt}
-            initial={{ opacity: 0, y: 4 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
             className="space-y-1"
           >
             <p>
@@ -64,18 +97,54 @@ function Terminal() {
               <span className="text-foreground">{line.prompt}</span>
             </p>
             {line.output.map((out) => (
-              <p key={out} className="pl-4 text-muted-foreground">
+              <p key={out} className="pl-4 text-muted-foreground/80">
                 {out}
               </p>
             ))}
           </motion.div>
         ))}
 
-        <p>
-          <span className="text-primary">vilder@dev</span>
-          <span className="text-muted-foreground">:~$ </span>
-          <span className="animate-pulse text-foreground">█</span>
-        </p>
+        {/* Currently typing line */}
+        {!isDone && (
+          <div className="space-y-1">
+            <p>
+              <span className="text-primary">vilder@dev</span>
+              <span className="text-muted-foreground">:~$ </span>
+              <span className="text-foreground">
+                {terminalLines[currentLine].prompt.slice(0, typedChars)}
+              </span>
+              <span className="animate-pulse text-primary">█</span>
+            </p>
+            {outputVisible &&
+              terminalLines[currentLine].output.map((out) => (
+                <motion.p
+                  key={out}
+                  initial={{ opacity: 0, x: -4 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="pl-4 text-muted-foreground/80"
+                >
+                  {out}
+                </motion.p>
+              ))}
+          </div>
+        )}
+
+        {/* Idle cursor when done */}
+        {isDone && (
+          <p>
+            <span className="text-primary">vilder@dev</span>
+            <span className="text-muted-foreground">:~$ </span>
+            <span className="animate-pulse text-primary">█</span>
+          </p>
+        )}
+      </div>
+
+      {/* Status bar */}
+      <div className="flex items-center justify-between border-t border-border/60 bg-primary/10 px-4 py-1.5 font-mono text-xs text-primary/70">
+        <span>● main</span>
+        <span>~/portfolio</span>
+        <span>zsh</span>
       </div>
     </div>
   )
@@ -108,78 +177,23 @@ function TiltTerminal() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX: springX, rotateY: springY, transformPerspective: 1000 }}
-      className="w-full cursor-default"
+      className="relative w-full cursor-default"
     >
+      {/* Glow */}
+      <motion.div
+        className="absolute -inset-4 -z-10 rounded-2xl bg-primary/25 blur-2xl"
+        animate={{ opacity: [0.5, 0.8, 0.5] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      />
       <Terminal />
     </motion.div>
   )
 }
 
-const leftTechStack = [
-  "React",
-  "Nextjs",
-  "TypeScript",
-  "JavaScript",
-  "TailwindCSS",
-] as const
-const rightTechStack = [
-  "Nodejs",
-  "Expressjs",
-  "MongoDB",
-  "PostgreSQL",
-  "Spring",
-] as const
-
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col justify-center py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="absolute top-1/4 left-15 hidden min-[1440px]:block">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="space-y-6"
-          >
-            {leftTechStack.map((tech, index) => {
-              const Icon = Icons[tech]
-              return (
-                <motion.div
-                  key={tech}
-                  className="flex h-12 w-12 animate-pulse items-center justify-center rounded-full border border-border bg-card/90 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-muted/40 dark:bg-muted/20 dark:hover:bg-muted/30"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                >
-                  <Icon className="h-7 w-7" aria-hidden="true" />
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        </div>
-
-        <div className="absolute top-1/3 right-15 hidden min-[1440px]:block">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.5 }}
-            className="space-y-6"
-          >
-            {rightTechStack.map((tech, index) => {
-              const Icon = Icons[tech]
-              return (
-                <motion.div
-                  key={tech}
-                  className="flex h-12 w-12 animate-pulse items-center justify-center rounded-full border border-border bg-card/90 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-muted/40 dark:bg-muted/20 dark:hover:bg-muted/30"
-                  style={{ animationDelay: `${index * 0.2 + 0.1}s` }}
-                  whileHover={{ scale: 1.2, rotate: -10 }}
-                >
-                  <Icon className="h-7 w-7" aria-hidden="true" />
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        </div>
-
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -201,10 +215,9 @@ export default function Hero() {
               </h2>
 
               <p className="max-w-xl text-lg text-muted-foreground">
-                Estudiante de último ciclo de Ingeniería de Sistemas de
-                Información en la UPC, con experiencia real en React, Next.js y
-                TypeScript. Con capacidad full stack usando Express, FastAPI y
-                Spring Boot.
+                Especializado en construir interfaces modernas y funcionales con
+                React, Next.js y TypeScript, con visión full stack usando
+                Node.js, Express y Spring Boot.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -289,7 +302,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 transform"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
           <Button
             variant="ghost"

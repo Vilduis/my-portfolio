@@ -1,15 +1,6 @@
-type ExperienceProject = {
-  name: string
-  achievements: string[]
-}
+import type { Experience } from "@/types/experience"
 
-export type Experience = {
-  title: string
-  company: string
-  period: string
-  location: string
-  projects: ExperienceProject[]
-}
+export type { Experience }
 
 export const experiences: Experience[] = [
   {
@@ -17,6 +8,7 @@ export const experiences: Experience[] = [
     company: "El Comercio",
     period: "Sep 2025 - Ene 2026",
     location: "Lima, Perú",
+    technologies: ["React", "TypeScript", "TailwindCSS"],
     projects: [
       {
         name: "Licencias de conducir en Perú",
@@ -34,6 +26,7 @@ export const experiences: Experience[] = [
     company: "Neon House Led",
     period: "Dic 2024 - Mar 2025",
     location: "Lima, Perú",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Supabase", "Shadcnui", "PostgreSQL"],
     projects: [
       {
         name: "ContigoVoy",

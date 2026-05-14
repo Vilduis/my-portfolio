@@ -1,12 +1,12 @@
 import Link from "next/link"
 import { Mail, Terminal } from "lucide-react"
-import { GitHub, LinkedIn } from "@/components/icons"
+import { GitHub, LinkedIn } from "@/components/shared/icons"
 import { navLinks } from "@/lib/navigation"
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/vilder-sandoval", icon: <LinkedIn width={18} height={18} /> },
-  { label: "GitHub", href: "https://github.com/Vilduis", icon: <GitHub width={18} height={18} /> },
-  { label: "Email", href: "mailto:luisvilders@gmail.com", icon: <Mail size={18} /> },
+  { label: "LinkedIn", href: "https://linkedin.com/in/vilder-sandoval", icon: <LinkedIn width={18} height={18} />, external: true },
+  { label: "GitHub", href: "https://github.com/Vilduis", icon: <GitHub width={18} height={18} />, external: true },
+  { label: "Email", href: "mailto:luisvilders@gmail.com", icon: <Mail size={18} />, external: false },
 ]
 
 const Footer = () => {
@@ -40,8 +40,8 @@ const Footer = () => {
               <Link
                 key={item.label}
                 href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 aria-label={item.label}
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >

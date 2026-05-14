@@ -4,10 +4,6 @@ import { motion } from "motion/react"
 import Image from "next/image"
 import { fadeInUp } from "@/lib/animations"
 
-const stats = [
-  { value: "1+", label: "Año de experiencia" },
-  { value: "5+", label: "Proyectos realizados" },
-]
 
 export default function About() {
   return (
@@ -57,30 +53,22 @@ export default function About() {
               </h3>
 
               <p className="text-muted-foreground">
-                Soy Vilder, estudiante de último ciclo de Ingeniería de Sistemas
-                de Información en la UPC. Me especializo en construir interfaces
-                modernas con React, Next.js y TypeScript, cuidando siempre la
-                calidad visual y la experiencia del usuario.
+                Soy desarrollador frontend de Lima, Perú, enfocado en crear
+                interfaces web modernas, funcionales y bien diseñadas. Tengo
+                experiencia trabajando en El Comercio, donde desarrollé
+                interactivos de datos para ECData usando TypeScript, Tailwind
+                CSS, Recharts y Framer Motion.
               </p>
 
               <p className="text-muted-foreground">
-                También tengo experiencia construyendo APIs con Express, FastAPI
-                y Spring Boot, lo que me permite colaborar en proyectos
-                completos de principio a fin.
+                Mi perfil se complementa con conocimientos de backend usando
+                Node.js/Express, FastAPI y Spring Boot, lo que me permite
+                participar en proyectos de principio a fin. Manejo bases de
+                datos con PostgreSQL y Supabase, y trabajo con herramientas como
+                Git, Vercel y AWS. Cuento con inglés B2, lo que me permite
+                integrarme sin problemas en equipos internacionales.
               </p>
 
-              <div className="flex gap-8">
-                {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <p className="text-3xl font-bold text-primary">
-                      {stat.value}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </motion.div>
           </div>
         </motion.div>

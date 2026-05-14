@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Globe, Server, Database } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import { fadeInUp } from "@/lib/animations"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/shared/icons"
 
 const techIconMap: Record<string, keyof typeof Icons> = {
   "React": "React",
@@ -112,9 +112,9 @@ export default function Technology() {
                     return (
                       <div
                         key={tech}
-                        className="flex cursor-default flex-col items-center justify-center gap-2 rounded-lg border border-border bg-card px-4 py-4 text-sm font-medium text-foreground transition-all duration-200 hover:scale-105 hover:border-primary/50 hover:bg-muted/40 hover:text-primary"
+                        className="flex cursor-default flex-col items-center justify-center gap-2 rounded-lg border border-border border-t-2 border-t-primary bg-card px-4 py-4 text-sm font-medium text-foreground transition-all duration-200 hover:scale-105 hover:bg-muted/40 hover:text-primary"
                       >
-                        {Icon && <Icon className="h-7 w-7 shrink-0" aria-hidden="true" />}
+                        {Icon && <Icon className="h-8 w-8 shrink-0" aria-hidden="true" />}
                         {tech}
                       </div>
                     )

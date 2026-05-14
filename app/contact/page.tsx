@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react"
 import { useState, useTransition } from "react"
-import { Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { Mail, MapPin, Send, CheckCircle, AlertCircle, Download } from "lucide-react"
 import { sendContactEmail } from "@/app/actions/contact"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { GitHub, LinkedIn } from "@/components/icons"
+import { GitHub, LinkedIn } from "@/components/shared/icons"
 import { fadeInUp } from "@/lib/animations"
 
 type ContactItem = {
@@ -27,7 +27,7 @@ const contactItems: ContactItem[] = [
     Icon: Mail,
     iconProps: { size: 20 },
     label: "Email",
-    value: "luisvilders@gmail.com",
+    value: "Escríbeme",
     href: "mailto:luisvilders@gmail.com",
     external: false,
   },
@@ -127,17 +127,21 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-foreground">
-                Estoy buscando nuevas oportunidades
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                Actualmente busco mi próxima oportunidad como Frontend
-                Developer. Si tienes una posición o propuesta, me encantaría
-                conversar.
+              <p className="text-muted-foreground">
+                Si tienes una posición o propuesta como Frontend Developer, me
+                encantaría conversar.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3">
+              <a
+                href="/CV-Sandoval.pdf"
+                download="CV_Sandoval.pdf"
+                className="flex items-center gap-2.5 rounded-full border border-primary bg-primary/10 px-4 py-2.5 text-sm font-medium text-primary transition-all duration-200 hover:bg-primary/20"
+              >
+                <Download size={16} />
+                Descargar CV
+              </a>
               {contactItems.map((item) =>
                 item.href ? (
                   <Link
@@ -173,7 +177,7 @@ export default function ContactPage() {
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Card className="border border-border bg-card shadow-xl">
+            <Card className="border border-border border-l-4 border-l-primary bg-card shadow-xl">
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <FieldGroup>
@@ -212,7 +216,7 @@ export default function ContactPage() {
                         type="text"
                         value={formData.subject}
                         onChange={handleChange}
-                        placeholder="¿En qué puedo ayudarte?"
+                        placeholder="Motivo del mensaje"
                       />
                     </Field>
 
@@ -225,7 +229,7 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Cuéntame sobre tu proyecto..."
+                        placeholder="Hola Vilder, me gustaría hablar contigo sobre..."
                       />
                     </Field>
                   </FieldGroup>

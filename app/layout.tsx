@@ -2,14 +2,12 @@ import type { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/shared/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import { AnimatedBackground } from "@/components/animated-background"
-import { ParticlesBackground } from "@/components/particles-background"
-import { AuroraBackground } from "@/components/aurora-background"
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
+import { DotGrid } from "@/components/shared/dot-grid"
 
 export const metadata: Metadata = {
   title: "Vilder Sandoval — Portfolio",
@@ -42,9 +40,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <TooltipProvider>
-            <AuroraBackground />
-            <ParticlesBackground />
-            <AnimatedBackground />
+            <DotGrid />
             <Navbar />
             <main>{children}</main>
             <Footer />

@@ -4,8 +4,8 @@ import { motion } from "motion/react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Briefcase, GraduationCap } from "lucide-react"
 import { fadeInUp } from "@/lib/animations"
-import Experience from "@/components/experience"
-import Education from "@/components/education"
+import Experience from "@/components/sections/experience"
+import Education from "@/components/sections/education"
 
 export default function ExperienceEducation() {
   return (

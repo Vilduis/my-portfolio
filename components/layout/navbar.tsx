@@ -4,13 +4,15 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { Menu, X, Terminal } from "lucide-react"
 import Link from "next/link"
-import { ModeToggle } from "./mode-toggle"
-import { GitHub } from "@/components/icons"
+import { usePathname } from "next/navigation"
+import { ModeToggle } from "@/components/shared/mode-toggle"
+import { GitHub } from "@/components/shared/icons"
 import { navLinks } from "@/lib/navigation"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -59,12 +61,15 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  className="group relative text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className={`group relative text-sm transition-colors hover:text-foreground ${
+                    pathname === item.href ? "text-primary" : "text-muted-foreground"
+                  }`}
                 >
                   {item.name}
                   <motion.span
                     className="absolute -bottom-1 left-0 h-[2px] bg-primary"
                     initial={{ width: 0 }}
+                    animate={{ width: pathname === item.href ? "100%" : 0 }}
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.25 }}
                   />
@@ -126,7 +131,9 @@ const Navbar = () => {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      className={`block py-2 text-sm transition-colors hover:text-foreground ${
+                        pathname === item.href ? "text-primary font-medium" : "text-muted-foreground"
+                      }`}
                     >
                       {item.name}
                     </Link>

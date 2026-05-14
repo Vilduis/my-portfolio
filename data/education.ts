@@ -1,11 +1,6 @@
-export type Education = {
-  degree: string
-  institution: string
-  period: string
-  location: string
-  highlights: string[]
-  achievements: string[]
-}
+import type { Education } from "@/types/education"
+
+export type { Education }
 
 export const education: Education = {
   degree: "Ingeniería de Sistemas de Información",
