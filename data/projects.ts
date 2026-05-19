@@ -6,7 +6,6 @@ import BackWorkshop from "../assets/BackWorkshop.png"
 import BackKairos from "../assets/BackKairos.png"
 import Simulacredit from "../assets/SimulaCredit.png"
 import CVSanius from "../assets/CVSanius.png"
-import LiriAI from "../assets/LiriAI.png"
 import Workshop from "../assets/Workshop.png"
 import Kairos from "../assets/Kairos.png"
 import BackCodeJourney from "../assets/BackCodeJourney.png"
@@ -89,7 +88,7 @@ export const personalProjects: Project[] = [
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Shadcnui", "Resend"],
     image: Portfolio1,
     description:
-      "Mi portafolio personal construido con Next.js, Tailwind CSS, TypeScript y Framer Motion.",
+      "Portafolio personal con diseño dark mode, dot grid animado, terminal interactiva en el hero y animaciones fluidas con Motion. Construido con Next.js, TypeScript, Tailwind CSS y Shadcn/UI. Incluye formulario de contacto con Resend.",
     github: "https://github.com/Vilduis/my-portfolio",
     demo: "https://vilduis.vercel.app/",
     category: "frontend",
@@ -107,17 +106,6 @@ export const personalProjects: Project[] = [
   },
   {
     id: 9,
-    name: "Liriai",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    image: LiriAI,
-    description:
-      "Aplicación web que usa Google Gemini para crear poemas y frases a partir de una idea o sentimiento, y redactar respuestas a mensajes con distintos tonos y formatos.",
-    github: "https://github.com/Vilduis/LiriAI",
-    demo: "https://liriai.netlify.app/",
-    category: "frontend",
-  },
-  {
-    id: 10,
     name: "Kairos API",
     technologies: ["FastAPI", "PostgreSQL", "JWT"],
     image: BackKairos,
@@ -128,7 +116,7 @@ export const personalProjects: Project[] = [
     category: "backend",
   },
   {
-    id: 11,
+    id: 10,
     name: "Workshop API",
     technologies: ["Spring", "JWT", "PostgreSQL", "Neon"],
     image: BackWorkshop,
@@ -139,7 +127,7 @@ export const personalProjects: Project[] = [
     category: "backend",
   },
   {
-    id: 12,
+    id: 11,
     name: "CodeJourney API",
     technologies: ["Nodejs", "Expressjs", "JavaScript", "MongoDB", "JWT"],
     image: BackCodeJourney,
