@@ -4,7 +4,6 @@ import Portfolio1 from "../assets/Portfolio1.png"
 import CodeJourney from "../assets/CodeJourney.png"
 import BackWorkshop from "../assets/BackWorkshop.png"
 import BackKairos from "../assets/BackKairos.png"
-import Simulacredit from "../assets/SimulaCredit.png"
 import CVSanius from "../assets/CVSanius.png"
 import Workshop from "../assets/Workshop.png"
 import Kairos from "../assets/Kairos.png"
@@ -60,19 +59,9 @@ export const personalProjects: Project[] = [
     demo: "https://worksho-pe.vercel.app/",
     category: "fullstack",
   },
+
   {
     id: 5,
-    name: "SimulaCredit",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Supabase", "Vite", "Shadcnui"],
-    image: Simulacredit,
-    description:
-      "Aplicación web full stack para simular créditos hipotecarios. Calcula cuotas mensuales, cronogramas de amortización e indicadores financieros clave (TCEA, VAN, TIR). Incluye gestión de clientes y propiedades, generación de reportes y exportación a PDF y Excel.",
-    github: "https://github.com/Vilduis/SimulaCredit",
-    demo: "https://simulacredit.netlify.app/",
-    category: "fullstack",
-  },
-  {
-    id: 6,
     name: "CodeJourney",
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Expressjs", "MongoDB"],
     image: CodeJourney,
@@ -83,7 +72,7 @@ export const personalProjects: Project[] = [
     category: "fullstack",
   },
   {
-    id: 7,
+    id: 6,
     name: "Portfolio",
     technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Shadcnui", "Resend"],
     image: Portfolio1,
@@ -94,7 +83,7 @@ export const personalProjects: Project[] = [
     category: "frontend",
   },
   {
-    id: 8,
+    id: 7,
     name: "CV Sanius",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     image: CVSanius,
@@ -105,7 +94,7 @@ export const personalProjects: Project[] = [
     category: "frontend",
   },
   {
-    id: 9,
+    id: 8,
     name: "Kairos API",
     technologies: ["FastAPI", "PostgreSQL", "JWT"],
     image: BackKairos,
@@ -116,7 +105,7 @@ export const personalProjects: Project[] = [
     category: "backend",
   },
   {
-    id: 10,
+    id: 9,
     name: "Workshop API",
     technologies: ["Spring", "JWT", "PostgreSQL", "Neon"],
     image: BackWorkshop,
@@ -127,7 +116,7 @@ export const personalProjects: Project[] = [
     category: "backend",
   },
   {
-    id: 11,
+    id: 10,
     name: "CodeJourney API",
     technologies: ["Nodejs", "Expressjs", "JavaScript", "MongoDB", "JWT"],
     image: BackCodeJourney,
