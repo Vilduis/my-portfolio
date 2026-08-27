@@ -4,7 +4,6 @@ import { motion } from "motion/react"
 import Image from "next/image"
 import { fadeInUp } from "@/lib/animations"
 
-
 export default function About() {
   return (
     <section className="relative py-28">
@@ -31,11 +30,12 @@ export default function About() {
                 <div className="relative rounded-full bg-linear-to-br from-primary via-primary/60 to-primary/20 p-[3px] shadow-xl shadow-primary/20">
                   <div className="h-64 w-64 overflow-hidden rounded-full md:h-72 md:w-72">
                     <Image
-                      src="/Luis.jpg"
+                      src="/louis.jpeg"
                       alt="Vilder Luis Sandoval"
                       width={400}
                       height={400}
                       className="h-full w-full object-cover"
+                      priority
                     />
                   </div>
                 </div>
@@ -68,7 +68,6 @@ export default function About() {
                 Git, Vercel y AWS. Cuento con inglés B2, lo que me permite
                 integrarme sin problemas en equipos internacionales.
               </p>
-
             </motion.div>
           </div>
         </motion.div>

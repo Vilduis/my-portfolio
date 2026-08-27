@@ -156,6 +156,6 @@
   }
 
   html {
-    @apply font-sans;
+    @apply font-sans scroll-pt-20;
   }
 }

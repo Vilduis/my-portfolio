@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
   {
     title: "Desarrollador Frontend",
     company: "El Comercio",
-    period: "Sep 2025 - Ene 2026",
+    period: "Sep 2025 - Mar 2026",
     location: "Lima, Perú",
     technologies: ["React", "TypeScript", "TailwindCSS"],
     projects: [

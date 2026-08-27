@@ -9,7 +9,8 @@ import Workshop from "../assets/Workshop.png"
 import Kairos from "../assets/Kairos.png"
 import BackCodeJourney from "../assets/BackCodeJourney.png"
 import CVMatch from "../assets/Cvmatch.png"
-import Vilfit from "../assets/Vilfit.png"
+import Stackly from "../assets/Stackly.png"
+
 
 
 export type { Project, ProjectCategory }
@@ -17,14 +18,14 @@ export type { Project, ProjectCategory }
 export const personalProjects: Project[] = [
   {
     id: 1,
-    name: "Vilfit",
-    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Authjs", "PostgreSQL", "Neon", "Shadcnui", "DrizzleORM"],
-    image: Vilfit,
+    name: "Stackly",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Shadcnui"],
+    image: Stackly,
     description:
-      "Marketplace de empleo para Latinoamérica que usa IA para eliminar el filtrado manual de CVs. Los reclutadores reciben un ranking automático de candidatos con score de compatibilidad, mientras los candidatos se postulan subiendo su CV.",
-    github: "https://github.com/Vilduis/Vilfit",
-    demo: "https://vilfit.vercel.app/",
-    category: "fullstack",
+      "Catálogo de herramientas para desarrollo web organizadas por categorías. Incluye fichas prácticas con precio, nivel técnico y casos de uso para elegir el stack ideal al instante.",
+    github: "https://github.com/Vilduis/Stackly",
+    demo: "https://stackly-eta.vercel.app/",
+    category: "frontend",
   },
   {
     id: 2,

@@ -6,27 +6,27 @@ type TechItem = {
 }
 
 const frontendStack: TechItem[] = [
-  { name: "React",        icon: Icons.React },
-  { name: "Next.js",      icon: Icons.Nextjs },
-  { name: "TypeScript",   icon: Icons.TypeScript },
-  { name: "JavaScript",   icon: Icons.JavaScript },
+  { name: "React", icon: Icons.React },
+  { name: "Next.js", icon: Icons.Nextjs },
+  { name: "TypeScript", icon: Icons.TypeScript },
+  { name: "JavaScript", icon: Icons.JavaScript },
   { name: "Tailwind CSS", icon: Icons.TailwindCSS },
-  { name: "Shadcn/UI",    icon: Icons.Shadcnui },
-  { name: "Angular",      icon: Icons.Angular },
-  { name: "Vite",         icon: Icons.Vite },
+  { name: "Shadcn/UI", icon: Icons.Shadcnui },
+  { name: "Angular", icon: Icons.Angular },
+  { name: "Vite", icon: Icons.Vite },
 ]
 
 const backendStack: TechItem[] = [
-  { name: "Node.js",      icon: Icons.Nodejs },
-  { name: "Express.js",   icon: Icons.Expressjs },
-  { name: "Spring Boot",  icon: Icons.Spring },
-  { name: "FastAPI",      icon: Icons.FastAPI },
-  { name: "PostgreSQL",   icon: Icons.PostgreSQL },
-  { name: "MongoDB",      icon: Icons.MongoDB },
-  { name: "Supabase",     icon: Icons.Supabase },
-  { name: "Auth.js",      icon: Icons.Authjs },
-  { name: "Java",         icon: Icons.Java },
-  { name: "Python",       icon: Icons.Python },
+  { name: "Node.js", icon: Icons.Nodejs },
+  { name: "Express.js", icon: Icons.Expressjs },
+  { name: "Spring Boot", icon: Icons.Spring },
+  { name: "FastAPI", icon: Icons.FastAPI },
+  { name: "PostgreSQL", icon: Icons.PostgreSQL },
+  { name: "MongoDB", icon: Icons.MongoDB },
+  { name: "Supabase", icon: Icons.Supabase },
+  { name: "Auth.js", icon: Icons.Authjs },
+  { name: "Java", icon: Icons.Java },
+  { name: "Python", icon: Icons.Python },
 ]
 
 function MarqueeRow({
@@ -49,10 +49,10 @@ function MarqueeRow({
           return (
             <div
               key={`${tech.name}-${i}`}
-              className="flex items-center gap-2 rounded-full border border-border bg-card shadow-sm px-4 py-2 backdrop-blur-sm dark:bg-muted/30 dark:shadow-none"
+              className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 shadow-sm backdrop-blur-sm dark:bg-muted/30 dark:shadow-none"
             >
               <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <span className="whitespace-nowrap text-sm text-muted-foreground">
+              <span className="text-sm whitespace-nowrap text-muted-foreground">
                 {tech.name}
               </span>
             </div>
@@ -65,8 +65,8 @@ function MarqueeRow({
 
 export function TechMarquee() {
   return (
-    <section id="tech-stack" className="border-t border-border py-16">
-      <p className="mb-10 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground">
+    <section id="tech-stack" className="pb-12">
+      <p className="mb-6 text-center text-xs font-medium tracking-widest text-muted-foreground uppercase">
         Stack Tecnológico
       </p>
       <div

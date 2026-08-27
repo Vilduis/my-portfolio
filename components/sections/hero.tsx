@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { motion, useMotionValue, useSpring } from "motion/react"
-import { ArrowDown, Mail, Download, ArrowRight } from "lucide-react"
+import { Mail, Download, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import {
   Tooltip,
@@ -57,7 +57,6 @@ function Terminal() {
 
   return (
     <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-primary/30 bg-card shadow-2xl shadow-primary/10">
-      {/* Scanlines overlay */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-10 rounded-xl"
@@ -67,7 +66,6 @@ function Terminal() {
         }}
       />
 
-      {/* Header */}
       <div className="flex items-center justify-between border-b border-border/60 bg-muted/30 px-4 py-2.5">
         <div className="flex items-center gap-1.5">
           <span className="h-3 w-3 rounded-full bg-red-400/90" />
@@ -80,9 +78,7 @@ function Terminal() {
         <div className="w-14" />
       </div>
 
-      {/* Body */}
       <div className="min-h-[220px] space-y-3 p-5 font-mono text-sm">
-        {/* Completed lines */}
         {terminalLines.slice(0, currentLine).map((line) => (
           <motion.div
             key={line.prompt}
@@ -104,7 +100,6 @@ function Terminal() {
           </motion.div>
         ))}
 
-        {/* Currently typing line */}
         {!isDone && (
           <div className="space-y-1">
             <p>
@@ -129,8 +124,6 @@ function Terminal() {
               ))}
           </div>
         )}
-
-        {/* Idle cursor when done */}
         {isDone && (
           <p>
             <span className="text-primary">vilder@dev</span>
@@ -140,7 +133,6 @@ function Terminal() {
         )}
       </div>
 
-      {/* Status bar */}
       <div className="flex items-center justify-between border-t border-border/60 bg-primary/10 px-4 py-1.5 font-mono text-xs text-primary/70">
         <span>● main</span>
         <span>~/portfolio</span>
@@ -179,7 +171,6 @@ function TiltTerminal() {
       style={{ rotateX: springX, rotateY: springY, transformPerspective: 1000 }}
       className="relative w-full cursor-default"
     >
-      {/* Glow */}
       <motion.div
         className="absolute -inset-4 -z-10 rounded-2xl bg-primary/25 blur-2xl"
         animate={{ opacity: [0.5, 0.8, 0.5] }}
@@ -192,7 +183,7 @@ function TiltTerminal() {
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center py-32">
+    <section className="relative flex flex-1 flex-col justify-center overflow-x-clip pt-28 pb-10 md:pt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
@@ -297,27 +288,6 @@ export default function Hero() {
             <TiltTerminal />
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <Button
-            variant="ghost"
-            size="icon"
-            className="animate-bounce rounded-full border border-border bg-muted/10 backdrop-blur-md"
-            onClick={() =>
-              document
-                .getElementById("tech-stack")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            <ArrowDown className="text-muted-foreground" />
-            <span className="sr-only">Scroll Down</span>
-          </Button>
-        </motion.div>
       </div>
     </section>
   )
