@@ -45,10 +45,11 @@ export function Nav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 py-3 sm:py-4">
-      <div className="no-scrollbar max-w-full overflow-x-auto rounded-full border border-border bg-background/70 shadow-lg shadow-black/5 backdrop-blur-md">
+      <div className="flex max-w-full items-center rounded-full border border-border bg-background/70 p-1 shadow-lg shadow-black/5 backdrop-blur-md">
+        {/* Solo los enlaces se desplazan; el botón de tema queda fijo a la derecha. */}
         <nav
           aria-label="Navegación principal"
-          className="flex w-max items-center gap-0.5 p-1"
+          className="no-scrollbar flex min-w-0 items-center gap-0.5 overflow-x-auto rounded-full"
         >
           {navigation.map(({ href, label }) => (
             <Link
@@ -56,6 +57,7 @@ export function Nav() {
               href={isHome ? href : `/${href}`}
               className={cn(
                 "rounded-full px-2.5 py-1.5 text-xs font-medium whitespace-nowrap transition-colors sm:px-3 sm:text-sm",
+                href === "#inicio" && "max-sm:hidden",
                 current === href
                   ? "bg-primary/10 text-primary"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -64,9 +66,9 @@ export function Nav() {
               {label}
             </Link>
           ))}
-          <span className="mx-1 h-4 w-px bg-border" aria-hidden="true" />
-          <ThemeToggle />
         </nav>
+        <span className="mx-1 h-4 w-px shrink-0 bg-border" aria-hidden="true" />
+        <ThemeToggle />
       </div>
     </header>
   )

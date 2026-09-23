@@ -15,7 +15,7 @@ const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 const title = `${site.name} — ${site.role}`
 
 const description =
-  "Desarrollador full stack en Lima, Perú. React, Next.js y TypeScript en el frontend; Node.js, FastAPI y Spring Boot en el backend."
+  "Desarrollador full stack en Lima, Perú. React, Next.js y TypeScript en el frontend; Node.js, Spring Boot y ASP.NET en el backend, con PostgreSQL y Oracle."
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Vilder Sandoval",
     "Full Stack Developer",
@@ -33,6 +36,9 @@ export const metadata: Metadata = {
     "TypeScript",
     "FastAPI",
     "Spring Boot",
+    "C#",
+    "ASP.NET",
+    "Oracle",
     "Lima",
     "Perú",
   ],
@@ -72,6 +78,7 @@ const personSchema = {
   url: site.url,
   jobTitle: site.role,
   description,
+  image: `${site.url}/louis.jpeg`,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Lima",
@@ -91,7 +98,10 @@ const personSchema = {
     "Express",
     "FastAPI",
     "Spring Boot",
+    "C#",
+    "ASP.NET",
     "PostgreSQL",
+    "Oracle",
     "MongoDB",
   ],
 }
@@ -104,6 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={cn("antialiased", fontSans.variable, fontMono.variable)}
     >

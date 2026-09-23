@@ -6,19 +6,18 @@ export const experiences: Experience[] = [
   {
     title: "Practicante de Ingeniería de Sistemas de Información",
     company: "Banco de la Nación de Perú",
-    period: "Jun 2026 - Actualidad",
+    period: "May 2026 - Actualidad",
     location: "Lima, Perú",
-
     achievements: [
       "Documenté el funcionamiento de aplicativos internos mediante diagramas de secuencia y casos de uso, incluyendo reglas de negocio y requerimientos funcionales, sirviendo de base para el desarrollo y las pruebas del equipo.",
-      "Contribuí al desarrollo full stack, mejorando interfaces frontend y elaborando consultas SQL sobre Oracle para aplicativos desarrollados en .NET C#.",
+      "Contribuí al desarrollo full stack de aplicativos internos en ASP.NET MVC, implementando controladores y lógica en C#, mejorando vistas con HTML, CSS y JavaScript, y elaborando consultas SQL sobre Oracle.",
       "Diseñé y ejecuté casos de prueba funcionales a partir de la documentación de casos de uso, validando el cumplimiento de requerimientos.",
     ],
   },
   {
     title: "Practicante de Desarrollo Frontend",
     company: "El Comercio",
-    period: "Sep 2025 - Mar 2026",
+    period: "Sep 2025 - May 2026",
     location: "Lima, Perú",
     achievements: [
       "Implementé visualizaciones de datos interactivas a partir de diseños en Figma y datasets sobre trámites gubernamentales, utilizando React, TypeScript y Recharts.",

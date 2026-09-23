@@ -2,16 +2,11 @@ import Image from "next/image"
 import { ExternalLink } from "lucide-react"
 
 import type { Project } from "@/types"
+import { categoryLabel } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { GitHubIcon } from "@/components/shared/icons"
 import { TechBadge } from "@/components/shared/tech-badge"
-
-const categoryLabel: Record<Project["category"], string> = {
-  frontend: "Frontend",
-  fullstack: "Full Stack",
-  backend: "Backend",
-}
 
 export function ProjectCard({ project }: { project: Project }) {
   const primaryLink = project.demo ?? project.github
@@ -29,7 +24,8 @@ export function ProjectCard({ project }: { project: Project }) {
         <Image
           src={project.image}
           alt={`Captura de ${project.name}`}
-          sizes="(min-width: 1024px) 19rem, (min-width: 640px) calc((100vw - 5rem) / 2), calc(100vw - 2.5rem)"
+          sizes="(min-width: 1152px) 22rem, (min-width: 1024px) calc((100vw - 7rem) / 3), (min-width: 640px) calc((100vw - 5rem) / 2), calc(100vw - 2.5rem)"
+          quality={90}
           placeholder="blur"
           className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
         />

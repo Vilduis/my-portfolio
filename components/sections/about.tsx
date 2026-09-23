@@ -53,7 +53,7 @@ export function AboutSection() {
           alt="Vilder Luis Sandoval"
           width={520}
           height={520}
-          className="mx-auto aspect-square w-64 rotate-2 rounded-2xl border border-border object-cover shadow-2xl shadow-black/30 sm:w-80 md:mx-0"
+          className="mx-auto aspect-square w-64 rotate-2 rounded-2xl border border-border object-cover shadow-2xl shadow-black/30 transition-[filter] duration-300 sm:w-80 md:mx-0 dark:brightness-[.85] dark:saturate-[.85] dark:hover:brightness-100 dark:hover:saturate-100"
         />
       </div>
     </Section>

@@ -8,7 +8,7 @@ export const site = {
   github: "https://github.com/Vilduis",
   linkedin: "https://linkedin.com/in/vilder-sandoval",
   cv: "/CV-Sandoval.pdf",
-  url: "https://vilduis.vercel.app",
+  url: "https://vilduis.com",
   available: true,
 } as const
 

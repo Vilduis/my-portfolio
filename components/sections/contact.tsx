@@ -17,7 +17,7 @@ export function ContactSection() {
           </p>
           <p className="mt-3 text-sm leading-relaxed text-balance-pretty text-muted-foreground sm:text-base">
             Si buscas un desarrollador full stack para tu equipo o quieres
-            conversar sobre un proyecto, escríbeme — suelo responder el mismo
+            conversar sobre un proyecto, escríbeme y suelo responder el mismo
             día.
           </p>
 

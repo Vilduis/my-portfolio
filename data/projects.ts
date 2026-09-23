@@ -1,32 +1,20 @@
 import type { Project, ProjectCategory } from "@/types"
 
-import Portfolio1 from "../assets/Portfolio1.png"
 import CodeJourney from "../assets/CodeJourney.png"
 import BackWorkshop from "../assets/BackWorkshop.png"
 import BackKairos from "../assets/BackKairos.png"
-import CVSanius from "../assets/CVSanius.png"
 import Workshop from "../assets/Workshop.png"
 import Kairos from "../assets/Kairos.png"
 import BackCodeJourney from "../assets/BackCodeJourney.png"
 import CVMatch from "../assets/Cvmatch.png"
 import Stackly from "../assets/Stackly.png"
+import CafeBle from "../assets/CafeBle.png"
 
 export type { Project, ProjectCategory }
 
 export const projects: Project[] = [
   {
     id: 1,
-    name: "Stackly",
-    technologies: ["Nextjs", "TypeScript", "TailwindCSS"],
-    image: Stackly,
-    description:
-      "Catálogo de herramientas para desarrollo web organizadas por categorías. Incluye fichas prácticas con precio, nivel técnico y casos de uso para elegir el stack ideal al instante.",
-    github: "https://github.com/Vilduis/Stackly",
-    demo: "https://stackly-eta.vercel.app/",
-    category: "frontend",
-  },
-  {
-    id: 2,
     name: "CVMatch",
     technologies: [
       "Nextjs",
@@ -41,6 +29,17 @@ export const projects: Project[] = [
     github: "https://github.com/Vilduis/CVMatch",
     demo: "https://cv-match-pe.vercel.app/",
     category: "fullstack",
+  },
+  {
+    id: 2,
+    name: "Stackly",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS"],
+    image: Stackly,
+    description:
+      "Catálogo de herramientas para desarrollo web organizadas por categorías. Incluye fichas prácticas con precio, nivel técnico y casos de uso para elegir el stack ideal al instante.",
+    github: "https://github.com/Vilduis/Stackly",
+    demo: "https://stackly-eta.vercel.app/",
+    category: "frontend",
   },
   {
     id: 3,
@@ -61,6 +60,17 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    name: "CafeBle",
+    technologies: ["React", "TypeScript", "TailwindCSS"],
+    image: CafeBle,
+    description:
+      "CafeBle: landing page para café de altura de Tingo María, Perú, con catálogo de variedades, selección de peso y molienda, precios dinámicos y pedidos directos por WhatsApp.",
+    github: "https://github.com/Vilduis/CafeBle",
+    demo: "https://cafeble.vercel.app/",
+    category: "frontend",
+  },
+  {
+    id: 5,
     name: "Workshop",
     technologies: [
       "React",
@@ -76,9 +86,8 @@ export const projects: Project[] = [
     demo: "https://worksho-pe.vercel.app/",
     category: "fullstack",
   },
-
   {
-    id: 5,
+    id: 6,
     name: "CodeJourney",
     technologies: [
       "Nextjs",
@@ -95,7 +104,7 @@ export const projects: Project[] = [
     category: "fullstack",
   },
   {
-    id: 6,
+    id: 7,
     name: "Kairos API",
     technologies: ["FastAPI", "PostgreSQL"],
     image: BackKairos,
@@ -106,7 +115,7 @@ export const projects: Project[] = [
     category: "backend",
   },
   {
-    id: 7,
+    id: 8,
     name: "Workshop API",
     technologies: ["Spring", "PostgreSQL"],
     image: BackWorkshop,
@@ -117,7 +126,7 @@ export const projects: Project[] = [
     category: "backend",
   },
   {
-    id: 8,
+    id: 9,
     name: "CodeJourney API",
     technologies: ["Expressjs", "JavaScript", "MongoDB"],
     image: BackCodeJourney,
@@ -130,3 +139,9 @@ export const projects: Project[] = [
 ]
 
 export const featuredProjects = projects.slice(0, 3)
+
+export const categoryLabel: Record<ProjectCategory, string> = {
+  frontend: "Frontend",
+  fullstack: "Full Stack",
+  backend: "Backend",
+}

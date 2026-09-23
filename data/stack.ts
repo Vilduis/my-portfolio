@@ -15,10 +15,10 @@ export const stack: StackGroup[] = [
   },
   {
     label: "Backend",
-    technologies: ["Nodejs", "Expressjs", "FastAPI", "Spring"],
+    technologies: ["Nodejs", "Expressjs", "FastAPI", "Spring", "AspNet"],
   },
   {
     label: "Base de datos",
-    technologies: ["PostgreSQL", "MongoDB", "Supabase", "DrizzleORM"],
+    technologies: ["PostgreSQL", "Oracle", "MongoDB", "Supabase"],
   },
 ]

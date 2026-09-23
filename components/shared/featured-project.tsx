@@ -2,16 +2,11 @@ import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 
 import type { Project } from "@/types"
+import { categoryLabel } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { GitHubIcon } from "@/components/shared/icons"
 import { TechBadge } from "@/components/shared/tech-badge"
-
-const categoryLabel: Record<Project["category"], string> = {
-  frontend: "Frontend",
-  fullstack: "Full Stack",
-  backend: "Backend",
-}
 
 export function FeaturedProject({ project }: { project: Project }) {
   const primaryLink = project.demo ?? project.github
@@ -30,6 +25,7 @@ export function FeaturedProject({ project }: { project: Project }) {
           src={project.image}
           alt=""
           sizes="(min-width: 768px) 38rem, calc(100vw - 2.5rem)"
+          quality={90}
           placeholder="blur"
           className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
