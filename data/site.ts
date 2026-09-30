@@ -2,7 +2,7 @@ export const site = {
   name: "Vilder Sandoval",
   fullName: "Vilder Luis Sandoval Verde",
   handle: "Vilduis",
-  role: "Full Stack Developer",
+  role: "Desarrollador Full Stack",
   location: "Lima, Perú",
   emailEncoded: "bHVpc3ZpbGRlcnNAZ21haWwuY29t",
   github: "https://github.com/Vilduis",

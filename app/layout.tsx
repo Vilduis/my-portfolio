@@ -12,10 +12,10 @@ const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
-const title = `${site.name} — ${site.role}`
+const title = `${site.name} | ${site.role}`
 
 const description =
-  "Desarrollador full stack en Lima, Perú. React, Next.js y TypeScript en el frontend; Node.js, Spring Boot y ASP.NET en el backend, con PostgreSQL y Oracle."
+  "Desarrollador full stack con enfoque en frontend en Lima, Perú. React, Next.js y TypeScript; visualizaciones de datos y scrollytelling para El Comercio, y desarrollo con C# y Oracle en el Banco de la Nación."
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

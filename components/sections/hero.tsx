@@ -33,16 +33,16 @@ export function Hero() {
               <strong className="font-semibold text-foreground">
                 Desarrollador Full Stack
               </strong>{" "}
-              de Lima, Perú. Construyo aplicaciones web de principio a fin: la
-              interfaz y la API que hay detrás. He trabajado en plataformas de{" "}
+              con enfoque en frontend, de Lima, Perú. Construí visualizaciones
+              de datos y scrollytelling para especiales de{" "}
               <strong className="font-semibold text-foreground">
-                prensa digital
-              </strong>{" "}
-              y en{" "}
-              <strong className="font-semibold text-foreground">
-                sistemas internos de banca
+                El Comercio
               </strong>
-              .
+              , y hoy desarrollo aplicativos internos en el{" "}
+              <strong className="font-semibold text-foreground">
+                Banco de la Nación
+              </strong>{" "}
+              con C# y Oracle.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">

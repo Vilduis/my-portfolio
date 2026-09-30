@@ -27,7 +27,6 @@ export interface Education {
   period: string
   location: string
   highlights: string[]
-  achievements: string[]
 }
 
 export interface StackGroup {

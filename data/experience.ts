@@ -5,35 +5,35 @@ export type { Experience }
 export const experiences: Experience[] = [
   {
     title: "Practicante de Ingeniería de Sistemas de Información",
-    company: "Banco de la Nación de Perú",
+    company: "Banco de la Nación",
     period: "May 2026 - Actualidad",
     location: "Lima, Perú",
     achievements: [
-      "Documenté el funcionamiento de aplicativos internos mediante diagramas de secuencia y casos de uso, incluyendo reglas de negocio y requerimientos funcionales, sirviendo de base para el desarrollo y las pruebas del equipo.",
-      "Contribuí al desarrollo full stack de aplicativos internos en ASP.NET MVC, implementando controladores y lógica en C#, mejorando vistas con HTML, CSS y JavaScript, y elaborando consultas SQL sobre Oracle.",
-      "Diseñé y ejecuté casos de prueba funcionales a partir de la documentación de casos de uso, validando el cumplimiento de requerimientos.",
+      "Desarrollo funcionalidades full stack con ASP.NET MVC para aplicativos de uso interno del banco: controladores y lógica de negocio en C#, vistas con HTML, CSS y JavaScript, y consultas SQL sobre Oracle.",
+      "Elaboro la documentación funcional de los sistemas mediante diagramas de secuencia y casos de uso, definiendo reglas de negocio y requerimientos que guían el desarrollo y las pruebas del equipo.",
+      "Diseño y ejecuto casos de prueba funcionales a partir de los casos de uso, validando el cumplimiento de los requerimientos antes de su paso a producción.",
     ],
   },
   {
     title: "Practicante de Desarrollo Frontend",
     company: "El Comercio",
-    period: "Sep 2025 - May 2026",
+    period: "Ago 2025 - May 2026",
     location: "Lima, Perú",
     achievements: [
-      "Implementé visualizaciones de datos interactivas a partir de diseños en Figma y datasets sobre trámites gubernamentales, utilizando React, TypeScript y Recharts.",
-      "Diseñé experiencias de scrollytelling para comunicar problemáticas ambientales complejas de forma clara y accesible al público general, utilizando GSAP y Framer Motion para narrar visualmente el fenómeno.",
-      "Garanticé consistencia visual y responsividad en secciones interactivas de alto tráfico, optimizando la experiencia en dispositivos móviles y desktop.",
+      "Implementé secciones de scrollytelling con GSAP y Framer Motion en el especial \"Bajo la superficie: la crisis que esconde el lago Titicaca\", investigación multimedia sobre la contaminación del lago.",
+      "Desarrollé visualizaciones de datos interactivas con React, TypeScript y Recharts para un especial sobre el trámite de licencias de conducir, a partir de diseños en Figma.",
+      "Colaboré con un equipo interdisciplinario de periodismo, diseño, análisis de datos y desarrollo, asegurando la responsividad y la consistencia visual de las secciones en móvil y desktop.",
     ],
   },
   {
-    title: "Desarrollador Web Jr",
+    title: "Practicante de Desarrollo Web",
     company: "Neon House Led",
     period: "Dic 2024 - Mar 2025",
     location: "Lima, Perú",
     achievements: [
-      "Construí interfaces accesibles y consistentes para una plataforma de salud mental online, traduciendo diseños de Figma a código con Next.js, TypeScript y Tailwind CSS.",
-      "Integré la gestión de usuarios, citas y sesiones en tiempo real conectando el frontend con Supabase, agilizando el flujo de reserva para los usuarios finales.",
-      "Creé componentes de interfaz reutilizables con Shadcn/UI, agilizando el desarrollo de nuevas pantallas y manteniendo un diseño uniforme en toda la plataforma.",
+      "Desarrollé interfaces para Contigo Voy, plataforma de terapia psicológica online para niños, adolescentes, adultos, parejas y familias, con Next.js, TypeScript y Tailwind CSS a partir de diseños en Figma.",
+      "Integré la gestión de usuarios, citas y sesiones en tiempo real con Supabase, simplificando la reserva de terapias para los pacientes.",
+      "Creé componentes reutilizables con Shadcn/UI, acelerando el desarrollo de nuevas pantallas y manteniendo un diseño uniforme en toda la plataforma.",
     ],
   },
 ]

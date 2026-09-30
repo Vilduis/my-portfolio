@@ -79,13 +79,13 @@ export function ExperienceSection() {
           period={education.period}
         >
           <ul className="space-y-2 text-[0.9375rem] leading-relaxed text-muted-foreground">
-            {education.achievements.map((achievement) => (
-              <li key={achievement} className="flex gap-2.5">
+            {education.highlights.map((highlight) => (
+              <li key={highlight} className="flex gap-2.5">
                 <span
                   aria-hidden="true"
                   className="mt-2 size-1 shrink-0 rounded-full bg-muted-foreground/50"
                 />
-                {achievement}
+                {highlight}
               </li>
             ))}
           </ul>
