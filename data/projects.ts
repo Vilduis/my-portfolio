@@ -3,7 +3,7 @@ import type { Project, ProjectCategory } from "@/types"
 import CodeJourney from "../assets/CodeJourney.png"
 import BackWorkshop from "../assets/BackWorkshop.png"
 import BackKairos from "../assets/BackKairos.png"
-import Workshop from "../assets/Workshop.png"
+import Motria from "../assets/Motria.png"
 import Kairos from "../assets/Kairos.png"
 import BackCodeJourney from "../assets/BackCodeJourney.png"
 import CVMatch from "../assets/Cvmatch.png"
@@ -60,6 +60,23 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    name: "Motria",
+    technologies: [
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Spring",
+      "PostgreSQL",
+    ],
+    image: Motria,
+    description:
+      "Sistema de gestión para talleres mecánicos: órdenes de servicio, técnicos, clientes y vehículos, con acceso por roles y dashboard de métricas en tiempo real.",
+    github: "https://github.com/Vilduis/motria",
+    demo: "https://motria.vercel.app/",
+    category: "fullstack",
+  },
+  {
+    id: 5,
     name: "CafeBle",
     technologies: ["React", "TypeScript", "TailwindCSS"],
     image: CafeBle,
@@ -69,23 +86,7 @@ export const projects: Project[] = [
     demo: "https://cafeble.vercel.app/",
     category: "frontend",
   },
-  {
-    id: 5,
-    name: "Workshop",
-    technologies: [
-      "React",
-      "TypeScript",
-      "TailwindCSS",
-      "Spring",
-      "PostgreSQL",
-    ],
-    image: Workshop,
-    description:
-      "Sistema de gestión para talleres mecánicos: órdenes de servicio, técnicos, clientes y vehículos, con acceso por roles y dashboard de métricas en tiempo real.",
-    github: "https://github.com/Vilduis/Workshop",
-    demo: "https://worksho-pe.vercel.app/",
-    category: "fullstack",
-  },
+
   {
     id: 6,
     name: "CodeJourney",
