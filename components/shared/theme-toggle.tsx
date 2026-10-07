@@ -12,7 +12,7 @@ export function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon-sm"
-      className="shrink-0 rounded-full"
+      className="touch-hitbox shrink-0 rounded-full"
       aria-label="Cambiar tema"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >

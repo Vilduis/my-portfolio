@@ -19,7 +19,7 @@ export function FeaturedProject({ project }: { project: Project }) {
         rel="noopener noreferrer"
         tabIndex={-1}
         aria-hidden="true"
-        className="overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-black/20 transition-colors group-hover:border-primary/60"
+        className="overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-elevation/20 transition-colors group-hover:border-primary/60"
       >
         <Image
           src={project.image}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useActionState, useId } from "react"
+import { useActionState, useEffect, useId, useRef } from "react"
 import { Check, Loader2, Send } from "lucide-react"
 
 import { sendContactEmail } from "@/app/actions/contact"
@@ -25,6 +25,11 @@ export function ContactForm() {
     initialContactState
   )
   const id = useId()
+  const successRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (state.status === "success") successRef.current?.focus()
+  }, [state.status])
 
   const ids = {
     name: `${id}-name`,
@@ -34,7 +39,12 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div className="flex h-full min-h-64 flex-col items-center justify-center gap-3 rounded-xl border border-primary/30 bg-primary/5 p-8 text-center">
+      <div
+        ref={successRef}
+        role="status"
+        tabIndex={-1}
+        className="flex h-full min-h-64 flex-col items-center justify-center gap-3 rounded-xl border border-primary/30 bg-primary/5 p-8 text-center outline-none"
+      >
         <span className="flex size-10 items-center justify-center rounded-full bg-primary/15">
           <Check className="size-5 text-primary" />
         </span>

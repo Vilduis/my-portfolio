@@ -64,6 +64,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <Button
             variant="outline"
             size="sm"
+            className="touch-hitbox"
             nativeButton={false}
             render={
               <a
@@ -79,6 +80,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.demo && (
             <Button
               size="sm"
+              className="touch-hitbox"
               nativeButton={false}
               render={
                 <a

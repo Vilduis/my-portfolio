@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -12,6 +12,8 @@ export function Nav() {
   const pathname = usePathname()
   const isHome = pathname === "/"
   const [active, setActive] = useState<string>("")
+  const [fade, setFade] = useState({ start: false, end: false })
+  const listRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     if (!isHome) return
@@ -37,26 +39,69 @@ export function Nav() {
     return () => observer.disconnect()
   }, [isHome])
 
+  useEffect(() => {
+    const list = listRef.current
+    if (!list) return
+
+    const update = () => {
+      const max = list.scrollWidth - list.clientWidth
+      const start = list.scrollLeft > 1
+      const end = list.scrollLeft < max - 1
+      setFade((prev) =>
+        prev.start === start && prev.end === end ? prev : { start, end }
+      )
+    }
+
+    update()
+    list.addEventListener("scroll", update, { passive: true })
+    const resizeObserver = new ResizeObserver(update)
+    resizeObserver.observe(list)
+
+    return () => {
+      list.removeEventListener("scroll", update)
+      resizeObserver.disconnect()
+    }
+  }, [])
+
   const current = isHome
     ? active
     : pathname.startsWith("/projects")
       ? "#proyectos"
       : ""
 
+  useEffect(() => {
+    const list = listRef.current
+    const link = list?.querySelector<HTMLElement>("[aria-current]")
+    if (!list || !link || list.scrollWidth <= list.clientWidth) return
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+
+    list.scrollTo({
+      left: link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2,
+      behavior: reduceMotion ? "auto" : "smooth",
+    })
+  }, [current])
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 py-3 sm:py-4">
-      <div className="flex max-w-full items-center rounded-full border border-border bg-background/70 p-1 shadow-lg shadow-black/5 backdrop-blur-md">
+      <div className="flex max-w-full items-center rounded-full border border-border bg-background/70 p-1 shadow-lg shadow-black/5 backdrop-blur-md max-sm:p-0.5">
         {/* Solo los enlaces se desplazan; el botón de tema queda fijo a la derecha. */}
         <nav
+          ref={listRef}
           aria-label="Navegación principal"
-          className="no-scrollbar flex min-w-0 items-center gap-0.5 overflow-x-auto rounded-full"
+          data-fade-start={fade.start || undefined}
+          data-fade-end={fade.end || undefined}
+          className="relative no-scrollbar flex min-w-0 scroll-fade items-center gap-0.5 overflow-x-auto rounded-full"
         >
           {navigation.map(({ href, label }) => (
             <Link
               key={href}
               href={isHome ? href : `/${href}`}
+              aria-current={current === href ? "location" : undefined}
               className={cn(
-                "rounded-full px-2.5 py-1.5 text-xs font-medium whitespace-nowrap transition-colors sm:px-3 sm:text-sm",
+                "flex items-center rounded-full px-2.5 py-1.5 text-xs font-medium whitespace-nowrap transition-colors focus-visible:-outline-offset-2 max-sm:min-h-11 sm:px-3 sm:text-sm",
                 href === "#inicio" && "max-sm:hidden",
                 current === href
                   ? "bg-primary/10 text-primary"

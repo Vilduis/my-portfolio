@@ -116,7 +116,7 @@ export default async function ProjectsPage({
       </p>
 
       <nav aria-label="Filtrar por categoría" className="mt-10">
-        <ul className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-x-2 gap-y-3">
           {filters.map((filter) => {
             const isActive = filter.value === category
             return (
@@ -124,7 +124,10 @@ export default async function ProjectsPage({
                 <Button
                   variant={isActive ? "secondary" : "ghost"}
                   size="sm"
-                  className={cn(!isActive && "text-muted-foreground")}
+                  className={cn(
+                    "touch-hitbox",
+                    !isActive && "text-muted-foreground"
+                  )}
                   nativeButton={false}
                   render={
                     <Link

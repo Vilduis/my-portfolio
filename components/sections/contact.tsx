@@ -10,7 +10,7 @@ import { ContactForm } from "@/components/shared/contact-form"
 export function ContactSection() {
   return (
     <Section id="contacto" title="Contacto" icon={AtSign}>
-      <div className="grid gap-8 rounded-2xl border border-border bg-card p-6 shadow-xl shadow-black/20 sm:p-10 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:gap-14">
+      <div className="grid gap-8 rounded-2xl border border-border bg-card p-6 shadow-xl shadow-elevation/20 sm:p-10 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:gap-14">
         <div>
           <p className="text-lg leading-snug font-medium text-balance sm:text-2xl">
             Estoy disponible para trabajar.

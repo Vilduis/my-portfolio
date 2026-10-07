@@ -123,9 +123,17 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        <a
+          href="#contenido"
+          className="sr-only rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60]"
+        >
+          Saltar al contenido
+        </a>
         <ThemeProvider defaultTheme="dark">
           <Nav />
-          <main className="w-full">{children}</main>
+          <main id="contenido" tabIndex={-1} className="w-full outline-none">
+            {children}
+          </main>
           <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
             <Footer />
           </div>
