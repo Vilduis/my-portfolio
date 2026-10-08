@@ -17,7 +17,7 @@ export function AboutSection() {
             </strong>{" "}
             y soy desarrollador full stack en Lima, Perú, especializado en
             frontend. Las APIs que hay detrás de varios de mis proyectos las
-            construí y desplegué yo mismo. Cuento con inglés B2.
+            construí y desplegué yo mismo.
           </p>
 
           <h3 className="mt-8 mb-4 flex items-center gap-2 text-sm font-semibold tracking-wide uppercase">
