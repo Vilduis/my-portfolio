@@ -16,6 +16,7 @@ import {
   siTypescript,
 } from "simple-icons"
 
+import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 
 type Icon = Pick<SimpleIcon, "title" | "hex" | "path">
@@ -55,7 +56,7 @@ const knockoutFill: Record<string, string> = {
   JavaScript: "#000",
 }
 
-export function TechBadge({ name }: { name: string }) {
+function TechBadge({ name }: { name: string }) {
   const icon = icons[name]
 
   return (
@@ -86,5 +87,23 @@ export function TechBadge({ name }: { name: string }) {
       )}
       {labels[name] ?? icon?.title ?? name}
     </Badge>
+  )
+}
+
+export function TechBadgeList({
+  technologies,
+  className,
+}: {
+  technologies: string[]
+  className?: string
+}) {
+  return (
+    <ul className={cn("flex flex-wrap gap-1.5", className)}>
+      {technologies.map((technology) => (
+        <li key={technology}>
+          <TechBadge name={technology} />
+        </li>
+      ))}
+    </ul>
   )
 }

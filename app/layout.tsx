@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
-import { site } from "@/data/site"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Nav } from "@/components/shared/nav"
-import { Footer } from "@/components/shared/footer"
+import { site } from "@/config/site"
+import { ThemeProvider } from "@/components/layout/theme-provider"
+import { Nav } from "@/components/layout/nav"
+import { Footer } from "@/components/layout/footer"
 import { cn } from "@/lib/utils"
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })

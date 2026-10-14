@@ -1,25 +1,21 @@
 "use client"
 
 import { useState, type ReactNode } from "react"
-
-import { site } from "@/data/site"
-import { Button, type buttonVariants } from "@/components/ui/button"
 import type { VariantProps } from "class-variance-authority"
 
-function mailto() {
-  return `mailto:${atob(site.emailEncoded)}`
-}
+import { decodeEmail } from "@/config/site"
+import { Button, type buttonVariants } from "@/components/ui/button"
+
+const mailto = () => `mailto:${decodeEmail()}`
 
 interface MailButtonProps extends VariantProps<typeof buttonVariants> {
   children: ReactNode
-  className?: string
 }
 
 export function MailButton({
   children,
   variant = "default",
   size = "lg",
-  className,
 }: MailButtonProps) {
   const [href, setHref] = useState<string>()
 
@@ -29,7 +25,6 @@ export function MailButton({
     <Button
       variant={variant}
       size={size}
-      className={className}
       nativeButton={false}
       render={
         <a

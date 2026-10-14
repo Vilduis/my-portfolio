@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowLeft, Code2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { HeadingAccent } from "@/components/shared/heading-accent"
 
 export const metadata: Metadata = {
   title: "Página no encontrada",
@@ -16,10 +17,7 @@ export default function NotFound() {
       <h1 className="mt-3 text-4xl font-bold tracking-[-0.03em] text-balance sm:text-5xl">
         Esta página no existe
       </h1>
-      <span
-        aria-hidden="true"
-        className="mt-4 block h-0.5 w-14 rounded-full bg-primary/70"
-      />
+      <HeadingAccent className="mt-4" />
 
       <p className="mt-5 max-w-xl text-sm leading-relaxed text-balance-pretty text-muted-foreground sm:text-base">
         Puede que el enlace esté mal escrito o que la página se haya movido. Lo

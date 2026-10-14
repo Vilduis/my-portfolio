@@ -1,5 +1,7 @@
 import type { ComponentType, ReactNode } from "react"
 
+import { HeadingAccent } from "@/components/shared/heading-accent"
+
 interface SectionProps {
   id: string
   title: string
@@ -16,10 +18,7 @@ export function Section({ id, title, icon: Icon, children }: SectionProps) {
             <Icon className="size-6 text-primary" />
             {title}
           </h2>
-          <span
-            aria-hidden="true"
-            className="mt-3 block h-0.5 w-14 rounded-full bg-primary/70"
-          />
+          <HeadingAccent className="mt-3" />
         </div>
         {children}
       </div>

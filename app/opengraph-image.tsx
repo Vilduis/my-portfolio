@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { ImageResponse } from "next/og"
 
-import { site } from "@/data/site"
+import { site } from "@/config/site"
 
 export const alt = `${site.name}, Desarrollador Full Stack en ${site.location}`
 export const size = { width: 1200, height: 630 }
@@ -36,7 +36,6 @@ export default async function OpengraphImage() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={photoSrc}
           alt=""

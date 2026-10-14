@@ -1,21 +1,33 @@
-# Next.js template
+# Portfolio · Vilder Sandoval
 
-This is a Next.js template with shadcn/ui.
+Portafolio personal construido con Next.js, TypeScript, Tailwind CSS y shadcn/ui.
 
-## Adding components
-
-To add components to your app, run the following command:
+## Scripts
 
 ```bash
-npx shadcn@latest add button
+pnpm dev        # servidor de desarrollo
+pnpm build      # build de producción
+pnpm lint       # ESLint
+pnpm typecheck  # TypeScript
+pnpm format     # Prettier
 ```
 
-This will place the ui components in the `components` directory.
+## Estructura
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
 ```
+app/                  Rutas, metadata y archivos especiales de Next.js
+config/site.ts        Datos globales del sitio y navegación
+components/
+  ui/                 Primitivas de shadcn/ui
+  layout/             Nav, footer y tema
+  shared/             Componentes reutilizables entre features
+features/
+  hero/               Presentación inicial
+  experience/         Experiencia laboral y formación
+  projects/           Proyectos destacados, catálogo, filtros y paginación
+  about/              Perfil y stack tecnológico
+  contact/            Formulario, validación y server action de contacto
+lib/utils.ts          Utilidades genéricas
+```
+
+Cada feature agrupa sus `components/`, `data/`, `types.ts` y, cuando aplica, `lib/`, `actions/` y `assets/`. Las features no se importan entre sí; lo común vive en `components/shared` o `config`.
