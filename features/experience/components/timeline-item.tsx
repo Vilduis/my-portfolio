@@ -23,7 +23,7 @@ export function TimelineItem({
       />
 
       <div>
-        <h3 className="leading-snug font-semibold text-balance text-primary">
+        <h3 className="leading-snug font-semibold text-balance">
           {title}
         </h3>
         <p className="mt-0.5 text-sm font-medium">{subtitle}</p>
@@ -32,7 +32,7 @@ export function TimelineItem({
         </p>
       </div>
 
-      <ul className="max-w-[34rem] space-y-2 text-[0.9375rem] leading-relaxed text-muted-foreground">
+      <ul className="max-w-[40rem] space-y-2 text-[0.9375rem] leading-relaxed text-muted-foreground">
         {items.map((item) => (
           <li key={item} className="flex gap-2.5">
             <span

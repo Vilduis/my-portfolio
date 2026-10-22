@@ -20,7 +20,7 @@ export function ExperienceSection() {
         ))}
       </ol>
 
-      <h3 className="mt-2 mb-6 flex items-center gap-2 text-sm font-semibold tracking-wide text-muted-foreground uppercase">
+      <h3 className="mt-10 mb-6 flex items-center gap-2 text-sm font-semibold tracking-wide text-muted-foreground uppercase">
         <GraduationCap className="size-4" />
         Formación
       </h3>

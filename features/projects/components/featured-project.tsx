@@ -19,7 +19,7 @@ export function FeaturedProject({ project }: { project: Project }) {
         rel="noopener noreferrer"
         tabIndex={-1}
         aria-hidden="true"
-        className="overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-elevation/20 transition-colors group-hover:border-primary/60"
+        className="overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-elevation/20 gradient-ring transition-colors group-hover:border-transparent group-hover:after:opacity-100"
       >
         <Image
           src={project.image}
@@ -39,7 +39,7 @@ export function FeaturedProject({ project }: { project: Project }) {
 
         <TechBadgeList technologies={project.technologies} className="mt-3" />
 
-        <p className="mt-4 max-w-prose text-sm leading-relaxed text-balance-pretty text-muted-foreground">
+        <p className="mt-4 max-w-prose text-[0.9375rem] leading-relaxed text-balance-pretty text-muted-foreground">
           {project.description}
         </p>
 

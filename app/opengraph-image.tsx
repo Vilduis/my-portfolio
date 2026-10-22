@@ -9,10 +9,10 @@ export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
 const colors = {
-  background: "#070708",
+  background: "#0f0e13",
   foreground: "#f0f2f4",
   muted: "#a1a6ad",
-  primary: "#9f6fff",
+  primary: "#a78bfa",
 }
 
 const stack = ["React", "Next.js", "TypeScript", "Node.js", "ASP.NET"]
@@ -84,7 +84,7 @@ export default async function OpengraphImage() {
             lineHeight: 1,
           }}
         >
-          Hey, soy&nbsp;<span style={{ color: colors.primary }}>Vilder</span>
+          Hola, soy&nbsp;<span style={{ color: colors.primary }}>Vilder</span>
         </div>
         <div
           style={{

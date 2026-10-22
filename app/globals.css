@@ -16,6 +16,8 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-action: var(--action);
+  --color-action-foreground: var(--action-foreground);
   --color-primary: var(--primary);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
@@ -32,39 +34,51 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.2 0.012 258);
-  --card: oklch(0.985 0.003 258);
-  --card-foreground: oklch(0.2 0.012 258);
+  --background: oklch(0.975 0.008 285);
+  --foreground: oklch(0.2 0.03 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.03 280);
   --primary: oklch(0.46 0.24 295);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.95 0.004 258);
-  --secondary-foreground: oklch(0.2 0.012 258);
-  --muted: oklch(0.95 0.004 258);
-  --muted-foreground: oklch(0.46 0.012 258);
+  --action: oklch(0.46 0.24 295);
+  --action-foreground: oklch(0.99 0 0);
+  --btn-from: oklch(0.46 0.24 295);
+  --btn-to: oklch(0.5 0.22 335);
+  --grad-from: oklch(0.6 0.19 45);
+  --grad-to: oklch(0.46 0.24 295);
+  --secondary: oklch(0.95 0.01 285);
+  --secondary-foreground: oklch(0.2 0.03 280);
+  --muted: oklch(0.95 0.01 285);
+  --muted-foreground: oklch(0.46 0.03 280);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.006 258);
-  --input: oklch(0.9 0.006 258);
+  --border: oklch(0.86 0.012 280);
+  --input: oklch(0.62 0.02 280);
   --ring: oklch(0.46 0.24 295);
   --radius: 0.625rem;
   --elevation: oklch(0.3 0.04 280 / 30%);
 }
 
 .dark {
-  --background: oklch(0.129 0.003 286);
-  --foreground: oklch(0.96 0.004 258);
-  --card: oklch(0.173 0.004 264.5);
-  --card-foreground: oklch(0.96 0.004 258);
-  --primary: oklch(0.66 0.21 295);
-  --primary-foreground: oklch(0.15 0.01 295);
-  --secondary: oklch(0.218 0.006 271.1);
-  --secondary-foreground: oklch(0.96 0.004 258);
-  --muted: oklch(0.196 0.008 274.5);
-  --muted-foreground: oklch(0.7 0.008 258);
+  --background: oklch(0.17 0.012 285);
+  --foreground: oklch(0.96 0.006 285);
+  --card: oklch(0.215 0.018 285);
+  --card-foreground: oklch(0.96 0.006 285);
+  --primary: oklch(0.78 0.14 294);
+  --primary-foreground: oklch(0.18 0.04 280);
+  --action: oklch(0.55 0.21 290);
+  --action-foreground: oklch(0.99 0 0);
+  --btn-from: oklch(0.55 0.21 285);
+  --btn-to: oklch(0.55 0.22 330);
+  --grad-from: oklch(0.8 0.15 55);
+  --grad-to: oklch(0.72 0.19 305);
+  --secondary: oklch(0.25 0.02 285);
+  --secondary-foreground: oklch(0.96 0.006 285);
+  --muted: oklch(0.25 0.02 285);
+  --muted-foreground: oklch(0.72 0.018 285);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(0.95 0.008 258 / 12%);
-  --input: oklch(0.95 0.008 258 / 20%);
-  --ring: oklch(0.66 0.21 295);
+  --border: oklch(0.95 0.02 285 / 11%);
+  --input: oklch(0.95 0.02 285 / 20%);
+  --ring: oklch(0.78 0.14 294);
   --elevation: oklch(0 0 0);
 }
 
@@ -124,6 +138,42 @@
 
   .font-mono {
     font-variant-numeric: tabular-nums;
+  }
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(100deg, var(--grad-from), var(--grad-to));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(100deg, var(--grad-from), var(--grad-to));
+}
+
+@utility bg-gradient-action {
+  background-image: linear-gradient(100deg, var(--btn-from), var(--btn-to));
+}
+
+@utility gradient-ring {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(100deg, var(--grad-from), var(--grad-to));
+    mask:
+      linear-gradient(#000 0 0) content-box exclude,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
   }
 }
 
@@ -209,7 +259,7 @@
 
 @utility hero-glow {
   background-image: radial-gradient(32rem 26rem at calc(min(100% - 1.5rem, 50% + 34.5rem) - 11.5rem) 55%,
-      color-mix(in oklch, var(--primary) 22%, transparent),
+      color-mix(in oklch, var(--primary) 11%, transparent),
       transparent 72%);
 }
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Poppins } from "next/font/google"
 
 import "./globals.css"
 import { site } from "@/config/site"
@@ -8,7 +8,11 @@ import { Nav } from "@/components/layout/nav"
 import { Footer } from "@/components/layout/footer"
 import { cn } from "@/lib/utils"
 
-const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const fontSans = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+})
 
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 

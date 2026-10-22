@@ -6,7 +6,6 @@ export const site = {
   emailEncoded: "bHVpc3ZpbGRlcnNAZ21haWwuY29t",
   github: "https://github.com/Vilduis",
   linkedin: "https://linkedin.com/in/vilder-sandoval",
-  cv: "/CV-Sandoval.pdf",
   url: "https://vilduis.com",
   available: true,
 } as const

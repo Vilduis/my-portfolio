@@ -19,7 +19,7 @@ export function ProjectCard({ project }: { project: Project }) {
         rel="noopener noreferrer"
         tabIndex={-1}
         aria-hidden="true"
-        className="overflow-hidden rounded-xl border border-border bg-card shadow-md shadow-black/5 transition-colors group-hover:border-primary/50"
+        className="overflow-hidden rounded-xl border border-border bg-card shadow-md shadow-black/5 gradient-ring transition-colors group-hover:border-transparent group-hover:after:opacity-100"
       >
         <Image
           src={project.image}
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="mt-4 flex flex-1 flex-col">
         <ProjectHeading project={project} className="text-lg font-bold" />
 
-        <p className="mt-2 text-sm leading-relaxed text-balance-pretty text-muted-foreground">
+        <p className="mt-2 text-[0.9375rem] leading-relaxed text-balance-pretty text-muted-foreground">
           {project.description}
         </p>
 

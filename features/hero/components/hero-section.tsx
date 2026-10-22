@@ -1,8 +1,7 @@
 import Image from "next/image"
-import { Download, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 
 import { site } from "@/config/site"
-import { Button } from "@/components/ui/button"
 import { MailButton } from "@/components/shared/mail-button"
 import { SocialLinks } from "@/components/shared/social-links"
 
@@ -25,8 +24,8 @@ export function HeroSection() {
               </span>
             )}
 
-            <h1 className="text-5xl font-bold tracking-[-0.03em] text-balance sm:text-6xl lg:text-7xl">
-              Hey, soy <span className="text-primary">Vilder</span>
+            <h1 className="text-5xl leading-[1.1] font-bold tracking-[-0.03em] text-balance sm:text-6xl lg:text-7xl">
+              Hola, soy <span className="text-gradient">Vilder</span>
             </h1>
 
             <p className="mt-5 max-w-[40rem] text-base leading-relaxed text-balance-pretty text-muted-foreground sm:text-lg">
@@ -51,15 +50,6 @@ export function HeroSection() {
                 Contáctame
               </MailButton>
               <SocialLinks size="lg" />
-              <Button
-                variant="ghost"
-                size="lg"
-                nativeButton={false}
-                render={<a href={site.cv} download="CV-Vilder-Sandoval.pdf" />}
-              >
-                <Download />
-                CV
-              </Button>
             </div>
           </div>
 
