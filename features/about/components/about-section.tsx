@@ -10,15 +10,26 @@ export function AboutSection() {
     <Section id="sobre-mi" title="Sobre mí" icon={UserRound}>
       <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-start md:gap-10">
         <div>
-          <p className="max-w-[38rem] text-sm leading-relaxed text-balance-pretty text-muted-foreground sm:text-base">
-            Me llamo{" "}
-            <strong className="font-semibold text-foreground">
-              Vilder Luis Sandoval Verde
-            </strong>{" "}
-            y soy desarrollador full stack en Lima, Perú, especializado en
-            frontend. Las APIs que hay detrás de varios de mis proyectos las
-            construí y desplegué yo mismo.
-          </p>
+          <div className="max-w-[38rem] space-y-4 text-sm leading-relaxed text-balance-pretty text-muted-foreground sm:text-base">
+            <p>
+              Me llamo{" "}
+              <strong className="font-semibold text-foreground">
+                Vilder Luis Sandoval Verde
+              </strong>
+              , aunque en internet me encuentras como Vilduis. Estudié
+              Ingeniería de Sistemas de Información en la UPC gracias a la Beca
+              18 y hoy soy bachiller. Lo que más disfruto es el frontend: me
+              encanta que una interfaz se sienta viva.
+            </p>
+            <p>
+              En El Comercio desarrollé las animaciones de un especial sobre el
+              lago Titicaca, y hoy en el Banco de la Nación trabajo en
+              aplicativos internos con C# y Oracle. Fuera del trabajo sigo
+              impulsando proyectos propios, con el objetivo de mejorar un poco
+              cada día y mantenerme actualizado con las tecnologías que van
+              transformando el desarrollo web.
+            </p>
+          </div>
 
           <h3 className="mt-8 mb-4 flex items-center gap-2 text-sm font-semibold tracking-wide uppercase">
             <Code2 className="size-4 text-primary" />

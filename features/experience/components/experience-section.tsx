@@ -15,7 +15,7 @@ export function ExperienceSection() {
             title={experience.title}
             subtitle={experience.company}
             period={experience.period}
-            items={experience.achievements}
+            description={experience.description}
           />
         ))}
       </ol>
@@ -30,7 +30,7 @@ export function ExperienceSection() {
           title={education.degree}
           subtitle={education.institution}
           period={education.period}
-          items={education.highlights}
+          description={education.description}
         />
       </ol>
     </Section>

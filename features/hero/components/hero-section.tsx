@@ -32,16 +32,17 @@ export function HeroSection() {
               <strong className="font-semibold text-foreground">
                 Desarrollador Full Stack
               </strong>{" "}
-              con enfoque en frontend, de Lima, Perú. Construí visualizaciones
-              de datos y scrollytelling para especiales de{" "}
+              de Lima, Perú. Construyo aplicaciones web de principio a fin:
+              interfaces interactivas, lógica de negocio y bases de datos. Tengo
+              experiencia en{" "}
               <strong className="font-semibold text-foreground">
-                El Comercio
-              </strong>
-              , y hoy desarrollo aplicativos internos en el{" "}
-              <strong className="font-semibold text-foreground">
-                Banco de la Nación
+                soluciones empresariales para la banca
               </strong>{" "}
-              con C# y Oracle.
+              y en{" "}
+              <strong className="font-semibold text-foreground">
+                especiales digitales para medios de comunicación
+              </strong>
+              .
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">

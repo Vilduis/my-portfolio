@@ -6,6 +6,7 @@ import {
   siFastapi,
   siJavascript,
   siMongodb,
+  siMysql,
   siNextdotjs,
   siNodedotjs,
   siPostgresql,
@@ -43,6 +44,7 @@ const icons: Record<string, Icon> = {
   Nodejs: siNodedotjs,
   AspNet: siDotnet,
   Oracle: oracle,
+  MySQL: siMysql,
 }
 
 const labels: Record<string, string> = {

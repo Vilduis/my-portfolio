@@ -26,10 +26,18 @@ export function ContactForm() {
   )
   const id = useId()
   const successRef = useRef<HTMLDivElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
     if (state.status === "success") successRef.current?.focus()
   }, [state.status])
+
+  useEffect(() => {
+    if (state.status !== "error") return
+    formRef.current
+      ?.querySelector<HTMLElement>('[aria-invalid="true"]')
+      ?.focus()
+  }, [state])
 
   const ids = {
     name: `${id}-name`,
@@ -57,7 +65,7 @@ export function ContactForm() {
   }
 
   return (
-    <form action={formAction}>
+    <form ref={formRef} action={formAction}>
       <div aria-hidden="true" className="hidden">
         <label htmlFor={`${id}-company`}>No rellenes este campo</label>
         <input
@@ -82,8 +90,14 @@ export function ContactForm() {
               required
               defaultValue={state.values?.name ?? ""}
               aria-invalid={Boolean(state.errors?.name)}
+              aria-describedby={
+                state.errors?.name ? `${ids.name}-error` : undefined
+              }
             />
-            <FieldError errors={asErrors(state.errors?.name)} />
+            <FieldError
+              id={`${ids.name}-error`}
+              errors={asErrors(state.errors?.name)}
+            />
           </Field>
 
           <Field data-invalid={Boolean(state.errors?.email)}>
@@ -96,12 +110,21 @@ export function ContactForm() {
               name="email"
               type="email"
               autoComplete="email"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
               maxLength={LIMITS.email}
               required
               defaultValue={state.values?.email ?? ""}
               aria-invalid={Boolean(state.errors?.email)}
+              aria-describedby={
+                state.errors?.email ? `${ids.email}-error` : undefined
+              }
             />
-            <FieldError errors={asErrors(state.errors?.email)} />
+            <FieldError
+              id={`${ids.email}-error`}
+              errors={asErrors(state.errors?.email)}
+            />
           </Field>
         </div>
 
@@ -119,8 +142,14 @@ export function ContactForm() {
             placeholder="Cuéntame qué necesitas y en qué plazo."
             defaultValue={state.values?.message ?? ""}
             aria-invalid={Boolean(state.errors?.message)}
+            aria-describedby={
+              state.errors?.message ? `${ids.message}-error` : undefined
+            }
           />
-          <FieldError errors={asErrors(state.errors?.message)} />
+          <FieldError
+            id={`${ids.message}-error`}
+            errors={asErrors(state.errors?.message)}
+          />
         </Field>
 
         <Field orientation="horizontal">

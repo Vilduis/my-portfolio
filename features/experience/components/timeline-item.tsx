@@ -2,14 +2,14 @@ interface TimelineItemProps {
   title: string
   subtitle: string
   period: string
-  items: string[]
+  description: string
 }
 
 export function TimelineItem({
   title,
   subtitle,
   period,
-  items,
+  description,
 }: TimelineItemProps) {
   return (
     <li className="relative grid gap-3 pb-12 pl-7 last:pb-0 sm:grid-cols-[15rem_1fr] sm:gap-10 lg:grid-cols-[17rem_1fr]">
@@ -23,26 +23,16 @@ export function TimelineItem({
       />
 
       <div>
-        <h3 className="leading-snug font-semibold text-balance">
-          {title}
-        </h3>
+        <h3 className="leading-snug font-semibold text-balance">{title}</h3>
         <p className="mt-0.5 text-sm font-medium">{subtitle}</p>
         <p className="mt-1.5 font-mono text-xs text-muted-foreground">
           {period}
         </p>
       </div>
 
-      <ul className="max-w-[40rem] space-y-2 text-[0.9375rem] leading-relaxed text-muted-foreground">
-        {items.map((item) => (
-          <li key={item} className="flex gap-2.5">
-            <span
-              aria-hidden="true"
-              className="mt-2 size-1 shrink-0 rounded-full bg-muted-foreground/50"
-            />
-            {item}
-          </li>
-        ))}
-      </ul>
+      <p className="max-w-[40rem] text-[0.9375rem] leading-relaxed text-balance-pretty text-muted-foreground">
+        {description}
+      </p>
     </li>
   )
 }
